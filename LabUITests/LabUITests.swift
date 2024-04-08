@@ -1,10 +1,3 @@
-//
-//  LabUITests.swift
-//  LabUITests
-//
-//  Created by Yuki Takahashi on 2024/04/08.
-//
-
 import XCTest
 
 final class LabUITests: XCTestCase {
