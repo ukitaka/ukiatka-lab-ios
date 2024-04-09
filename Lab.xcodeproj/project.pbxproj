@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		E803F0E92BC54AE20018C688 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
 		E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTest.swift; sourceTree = "<group>"; };
+		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC02BC3E4F300248AF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		E83A3BBD2BC3E4F300248AF5 /* Lab */ = {
 			isa = PBXGroup;
 			children = (
+				E803F0ED2BC5916A0018C688 /* Info.plist */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
 				E83A3BC02BC3E4F300248AF5 /* ContentView.swift */,
 				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
@@ -432,6 +434,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lab/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Lab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -472,6 +475,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lab/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Lab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
