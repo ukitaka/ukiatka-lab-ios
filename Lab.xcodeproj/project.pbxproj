@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E803F0EA2BC54AE20018C688 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803F0E92BC54AE20018C688 /* Tokenizer.swift */; };
+		E803F0EC2BC54C8D0018C688 /* TokenizerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */; };
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E803F0E92BC54AE20018C688 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTest.swift; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC02BC3E4F300248AF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
 				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
 				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
+				E803F0E92BC54AE20018C688 /* Tokenizer.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E83A3BD02BC3E4F400248AF5 /* LabTests.swift */,
+				E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */,
 			);
 			path = LabTests;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */,
+				E803F0EA2BC54AE20018C688 /* Tokenizer.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E83A3BD12BC3E4F400248AF5 /* LabTests.swift in Sources */,
+				E803F0EC2BC54C8D0018C688 /* TokenizerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
