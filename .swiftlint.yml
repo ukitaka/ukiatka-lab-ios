@@ -1,0 +1,121 @@
+# https://realm.github.io/SwiftLint/rule-directory.html
+
+opt_in_rules:
+  - array_init
+  - closure_end_indentation
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - convenience_type
+  - discouraged_object_literal
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - empty_xctest_method
+  - enum_case_associated_values_count
+  - extension_access_modifier
+  - fallthrough
+  - fatal_error_message
+  - file_header
+  - file_name_no_space
+  - flatmap_over_map_reduce
+  - identical_operands
+  - identifier_name
+  - implicit_return
+  - indentation_width
+  - joined_default_parameter
+  - last_where
+  - legacy_multiple
+  - legacy_random
+  - literal_expression_end_indentation
+  - lower_acl_than_parent
+  - modifier_order
+  - multiline_arguments_brackets
+  - operator_usage_whitespace
+  - optional_enum_case_matching
+  - overridden_super_call
+  - override_in_extension
+  - prefer_self_type_over_type_of_self
+  - prefer_zero_over_explicit_init
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - shorthand_optional_binding
+  - sorted_first_last
+  - static_operator
+  - toggle_bool
+  - unavailable_function
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - vertical_parameter_alignment_on_call
+  - vertical_whitespace_between_cases
+  - vertical_whitespace_closing_braces
+  - vertical_whitespace_opening_braces
+  - xct_specific_matcher
+  - yoda_condition
+  - explicit_init
+
+disabled_rules:
+  - line_length # Covered with swift-format.
+  - colon # Covered with swift-format.
+  - trailing_comma # Not match with swift-format.
+  - opening_brace # Not match with swift-format.
+  - weak_delegate # Not need.
+  - xctfail_message # Not need.
+  - override_in_extension # Not need.
+  - inclusive_language # Not need.
+  - static_operator # Not need.
+  - todo # Covered with custom rules.
+  - void_function_in_ternary # Not need.
+  - for_where # Not need.
+  - shorthand_operator # Not need.
+  - unneeded_synthesized_initializer # conflict with swift-mod
+  - implicitly_unwrapped_optional
+  - force_unwrapping
+
+analyzer_rules:
+  - unused_declaration
+  - unused_import
+
+identifier_name:
+  min_length: 1
+
+type_name:
+  min_length: 2
+  max_length: 50
+  allowed_symbols: "_"
+
+type_body_length:
+  warning: 800
+
+file_length:
+  warning: 1000
+
+function_body_length:
+  warning: 300
+
+function_parameter_count:
+  warning: 8
+
+enum_case_associated_values_count:
+  warning: 8
+
+large_tuple:
+  warning: 4
+
+file_header:
+  forbidden_string: .
+
+statement_position:
+  statement_mode: uncuddled_else
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+
+nesting:
+  type_level: 3

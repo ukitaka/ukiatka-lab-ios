@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E803F0EA2BC54AE20018C688 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803F0E92BC54AE20018C688 /* Tokenizer.swift */; };
-		E803F0EC2BC54C8D0018C688 /* TokenizerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,9 +17,6 @@
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
-		E83A3BD12BC3E4F400248AF5 /* LabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BD02BC3E4F400248AF5 /* LabTests.swift */; };
-		E83A3BDB2BC3E4F400248AF5 /* LabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BDA2BC3E4F400248AF5 /* LabUITests.swift */; };
-		E83A3BDD2BC3E4F400248AF5 /* LabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BDC2BC3E4F400248AF5 /* LabUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E803F0E92BC54AE20018C688 /* Tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
-		E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenizerTest.swift; sourceTree = "<group>"; };
 		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E80F8F4C2BC7999900D65531 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -78,10 +71,7 @@
 		E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lab.entitlements; sourceTree = "<group>"; };
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83A3BCC2BC3E4F400248AF5 /* LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E83A3BD02BC3E4F400248AF5 /* LabTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabTests.swift; sourceTree = "<group>"; };
 		E83A3BD62BC3E4F400248AF5 /* LabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E83A3BDA2BC3E4F400248AF5 /* LabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabUITests.swift; sourceTree = "<group>"; };
-		E83A3BDC2BC3E4F400248AF5 /* LabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +157,6 @@
 				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
 				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
 				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
-				E803F0E92BC54AE20018C688 /* Tokenizer.swift */,
 				E80F8F632BC7A76A00D65531 /* LoginView.swift */,
 			);
 			path = Lab;
@@ -184,8 +173,6 @@
 		E83A3BCF2BC3E4F400248AF5 /* LabTests */ = {
 			isa = PBXGroup;
 			children = (
-				E83A3BD02BC3E4F400248AF5 /* LabTests.swift */,
-				E803F0EB2BC54C8D0018C688 /* TokenizerTest.swift */,
 			);
 			path = LabTests;
 			sourceTree = "<group>";
@@ -193,8 +180,6 @@
 		E83A3BD92BC3E4F400248AF5 /* LabUITests */ = {
 			isa = PBXGroup;
 			children = (
-				E83A3BDA2BC3E4F400248AF5 /* LabUITests.swift */,
-				E83A3BDC2BC3E4F400248AF5 /* LabUITestsLaunchTests.swift */,
 			);
 			path = LabUITests;
 			sourceTree = "<group>";
@@ -223,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E83A3BE02BC3E4F400248AF5 /* Build configuration list for PBXNativeTarget "Lab" */;
 			buildPhases = (
+				E80F8F662BC7B00300D65531 /* SwiftLint */,
 				E83A3BB72BC3E4F300248AF5 /* Sources */,
 				E83A3BB82BC3E4F300248AF5 /* Frameworks */,
 				E83A3BB92BC3E4F300248AF5 /* Resources */,
@@ -364,6 +350,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E80F8F662BC7B00300D65531 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E80F8F482BC7999900D65531 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -378,7 +386,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */,
-				E803F0EA2BC54AE20018C688 /* Tokenizer.swift in Sources */,
 				E80F8F642BC7A76A00D65531 /* LoginView.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 			);
@@ -388,8 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E83A3BD12BC3E4F400248AF5 /* LabTests.swift in Sources */,
-				E803F0EC2BC54C8D0018C688 /* TokenizerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,8 +402,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E83A3BDD2BC3E4F400248AF5 /* LabUITestsLaunchTests.swift in Sources */,
-				E83A3BDB2BC3E4F400248AF5 /* LabUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,7 +529,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -587,7 +590,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

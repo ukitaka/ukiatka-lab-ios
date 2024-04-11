@@ -3,12 +3,12 @@ import SwiftUI
 struct Feature: Identifiable {
     var id: String
     let name: String
-    
+
     var code: String {
         """
         code **block** _is_
-        
-        
+
+
         ```swift
         print("hello world")
         ```
@@ -19,7 +19,7 @@ struct Feature: Identifiable {
 let features: [Feature] = [
     Feature(id: "A", name: "AAA"),
     Feature(id: "B", name: "BBB"),
-    Feature(id: "C", name: "CCC"),
+    Feature(id: "C", name: "CCC")
 ]
 
 struct ContentView: View {
