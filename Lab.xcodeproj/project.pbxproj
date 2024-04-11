@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E80325BE2BC801CB00760519 /* LoginFeatureswift in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F632BC7A76A00D65531 /* LoginFeatureswift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E80F8F5E2BC7A31B00D65531 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E80F8F5D2BC7A31B00D65531 /* Auth */; };
 		E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E80F8F612BC7A41F00D65531 /* Supabase */; };
-		E80F8F642BC7A76A00D65531 /* LoginFeatureswift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F632BC7A76A00D65531 /* LoginFeatureswift */; };
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
@@ -331,6 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E80325BE2BC801CB00760519 /* LoginFeatureswift in Resources */,
 				E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */,
 				E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */,
 			);
@@ -407,7 +408,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */,
-				E80F8F642BC7A76A00D65531 /* LoginFeatureswift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
