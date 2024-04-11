@@ -79,7 +79,7 @@
 
 /* Begin PBXFileReference section */
 		E800AC8F2BC7C62B00BED4F0 /* Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E80F8F4C2BC7999900D65531 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		E80F8F512BC7999900D65531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -155,20 +155,12 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
-		E80F8F5C2BC7A31B00D65531 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E83A3BB22BC3E4F300248AF5 = {
 			isa = PBXGroup;
 			children = (
 				E83A3BBD2BC3E4F300248AF5 /* Lab */,
 				E800AC892BC7C48600BED4F0 /* Extensions */,
 				E83A3BBC2BC3E4F300248AF5 /* Products */,
-				E80F8F5C2BC7A31B00D65531 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,13 +179,10 @@
 		E83A3BBD2BC3E4F300248AF5 /* Lab */ = {
 			isa = PBXGroup;
 			children = (
-				E803F0ED2BC5916A0018C688 /* Info.plist */,
+				E8FF5AF92BC7FFD10049A49F /* Assets */,
+				E8FF5AF82BC7FF6D0049A49F /* Login */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
 				E83A3BC02BC3E4F300248AF5 /* ContentView.swift */,
-				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
-				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
-				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
-				E80F8F632BC7A76A00D65531 /* LoginView.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -204,6 +193,25 @@
 				E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E80F8F632BC7A76A00D65531 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		E8FF5AF92BC7FFD10049A49F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
+				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
+				E803F0ED2BC5916A0018C688 /* Info.plist */,
+				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +368,7 @@
 			mainGroup = E83A3BB22BC3E4F300248AF5;
 			packageReferences = (
 				E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = E83A3BBC2BC3E4F300248AF5 /* Products */;
 			projectDirPath = "";
@@ -788,15 +797,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Lab/Lab.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lab/Assets/Lab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Lab/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Lab/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lab/Info.plist;
+				INFOPLIST_FILE = Lab/Assets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Lab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -830,15 +839,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Lab/Lab.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lab/Assets/Lab.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Lab/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Lab/Assets/Preview Content\"";
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Lab/Info.plist;
+				INFOPLIST_FILE = Lab/Assets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Lab;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -1022,6 +1031,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.5.1;
+			};
+		};
+		E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
