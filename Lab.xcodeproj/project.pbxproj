@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E80325BE2BC801CB00760519 /* LoginFeatureswift in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F632BC7A76A00D65531 /* LoginFeatureswift */; };
+		E80325BE2BC801CB00760519 /* LoginFeature.swift in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F632BC7A76A00D65531 /* LoginFeature.swift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -63,7 +63,7 @@
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		E80F8F512BC7999900D65531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E80F8F532BC7999900D65531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E80F8F632BC7A76A00D65531 /* LoginFeatureswift */ = {isa = PBXFileReference; lastKnownFileType = text; path = LoginFeatureswift; sourceTree = "<group>"; };
+		E80F8F632BC7A76A00D65531 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC02BC3E4F300248AF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E80F8F632BC7A76A00D65531 /* LoginFeatureswift */,
+				E80F8F632BC7A76A00D65531 /* LoginFeature.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E80325BE2BC801CB00760519 /* LoginFeatureswift in Resources */,
+				E80325BE2BC801CB00760519 /* LoginFeature.swift in Resources */,
 				E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */,
 				E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */,
 			);
