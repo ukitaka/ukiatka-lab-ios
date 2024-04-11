@@ -21,6 +21,7 @@ struct LoginFeature {
         case initialLoadStarted
         case initialLoadCompleted
         case loginButtonTapped
+        case loginCompleted
         case binding(BindingAction<State>)
     }
 
@@ -33,8 +34,13 @@ struct LoginFeature {
 
             case .initialLoadStarted:
                 return .run { send in
-                    _ = try? await client.auth.user()
-                    await send(.initialLoadCompleted)
+                    let user = try? await client.auth.user()
+
+                    if user != nil {
+                        await send(.loginCompleted)
+                    } else {
+                        await send(.initialLoadCompleted)
+                    }
                 }
 
             case .initialLoadCompleted:
@@ -42,14 +48,19 @@ struct LoginFeature {
                 return .none
 
             case .loginButtonTapped:
-                return .run { [username = state.username, password = state.password] _ in
+                return .run { [username = state.username, password = state.password] send in
                     do {
                         let session = try await client.auth.signIn(email: username, password: password)
                         print(session.user.email ?? "no-email")
+                        await send(.loginCompleted)
                     } catch {
                         print(error)
                     }
                 }
+
+            case .loginCompleted:
+                print("logged-in!!!")
+                return .none
             }
         }
     }
