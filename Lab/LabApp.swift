@@ -1,3 +1,4 @@
+import ComposableArchitecture
 import Supabase
 import SwiftUI
 
@@ -10,10 +11,9 @@ let client = SupabaseClient(
 struct LabApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .onOpenURL(perform: { url in
-                    print(url)
-                })
+            LoginView(store: Store(initialState: LoginFeature.State()) {
+                LoginFeature()
+            })
         }
     }
 }
