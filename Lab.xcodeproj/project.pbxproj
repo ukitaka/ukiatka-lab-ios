@@ -19,28 +19,6 @@
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
-		E8FF5AE02BC7C9A70049A49F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA02BC7C7B90049A49F /* Router.swift */; };
-		E8FF5AE12BC7C9A70049A49F /* ContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A972BC7C7B90049A49F /* ContextProvider.swift */; };
-		E8FF5AE22BC7C9A70049A49F /* SubContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA32BC7C7B90049A49F /* SubContext.swift */; };
-		E8FF5AE32BC7C9A70049A49F /* WireframeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5ABC2BC7C92B0049A49F /* WireframeView.swift */; };
-		E8FF5AE42BC7C9A70049A49F /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A952BC7C7B90049A49F /* Context.swift */; };
-		E8FF5AE52BC7C9A70049A49F /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA52BC7C7B90049A49F /* System.swift */; };
-		E8FF5AE62BC7C9A70049A49F /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9A2BC7C7B90049A49F /* Feedback.swift */; };
-		E8FF5AE72BC7C9A70049A49F /* ObservableConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9C2BC7C7B90049A49F /* ObservableConsumer.swift */; };
-		E8FF5AE82BC7C9A70049A49F /* ObservableProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9D2BC7C7B90049A49F /* ObservableProvider.swift */; };
-		E8FF5AE92BC7C9A70049A49F /* WireframeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5ABE2BC7C92B0049A49F /* WireframeBuilder.swift */; };
-		E8FF5AEA2BC7C9A70049A49F /* RouterProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA22BC7C7B90049A49F /* RouterProvider.swift */; };
-		E8FF5AEC2BC7C9A70049A49F /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9F2BC7C7B90049A49F /* Reducer.swift */; };
-		E8FF5AED2BC7C9A70049A49F /* Subsystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA42BC7C7B90049A49F /* Subsystem.swift */; };
-		E8FF5AEE2BC7C9A70049A49F /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A982BC7C7B90049A49F /* EventMonitor.swift */; };
-		E8FF5AEF2BC7C9A70049A49F /* RouteWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5ABB2BC7C92B0049A49F /* RouteWireframe.swift */; };
-		E8FF5AF02BC7C9A70049A49F /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5ABD2BC7C92B0049A49F /* Wireframe.swift */; };
-		E8FF5AF12BC7C9A70049A49F /* MainThreadScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9B2BC7C7B90049A49F /* MainThreadScheduler.swift */; };
-		E8FF5AF22BC7C9A70049A49F /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AC02BC7C92B0049A49F /* Routing.swift */; };
-		E8FF5AF32BC7C9A70049A49F /* ResolvedWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5ABA2BC7C92B0049A49F /* ResolvedWireframe.swift */; };
-		E8FF5AF42BC7C9A70049A49F /* ContextConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A962BC7C7B90049A49F /* ContextConsumer.swift */; };
-		E8FF5AF52BC7C9A70049A49F /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5A9E2BC7C7B90049A49F /* Processor.swift */; };
-		E8FF5AF62BC7C9A70049A49F /* RouterConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8FF5AA12BC7C7B90049A49F /* RouterConsumer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,28 +93,6 @@
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83A3BCC2BC3E4F400248AF5 /* LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BD62BC3E4F400248AF5 /* LabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8FF5A952BC7C7B90049A49F /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		E8FF5A962BC7C7B90049A49F /* ContextConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextConsumer.swift; sourceTree = "<group>"; };
-		E8FF5A972BC7C7B90049A49F /* ContextProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextProvider.swift; sourceTree = "<group>"; };
-		E8FF5A982BC7C7B90049A49F /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		E8FF5A9A2BC7C7B90049A49F /* Feedback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
-		E8FF5A9B2BC7C7B90049A49F /* MainThreadScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainThreadScheduler.swift; sourceTree = "<group>"; };
-		E8FF5A9C2BC7C7B90049A49F /* ObservableConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableConsumer.swift; sourceTree = "<group>"; };
-		E8FF5A9D2BC7C7B90049A49F /* ObservableProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProvider.swift; sourceTree = "<group>"; };
-		E8FF5A9E2BC7C7B90049A49F /* Processor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
-		E8FF5A9F2BC7C7B90049A49F /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
-		E8FF5AA02BC7C7B90049A49F /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		E8FF5AA12BC7C7B90049A49F /* RouterConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterConsumer.swift; sourceTree = "<group>"; };
-		E8FF5AA22BC7C7B90049A49F /* RouterProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProvider.swift; sourceTree = "<group>"; };
-		E8FF5AA32BC7C7B90049A49F /* SubContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubContext.swift; sourceTree = "<group>"; };
-		E8FF5AA42BC7C7B90049A49F /* Subsystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subsystem.swift; sourceTree = "<group>"; };
-		E8FF5AA52BC7C7B90049A49F /* System.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
-		E8FF5ABA2BC7C92B0049A49F /* ResolvedWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolvedWireframe.swift; sourceTree = "<group>"; };
-		E8FF5ABB2BC7C92B0049A49F /* RouteWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteWireframe.swift; sourceTree = "<group>"; };
-		E8FF5ABC2BC7C92B0049A49F /* WireframeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireframeView.swift; sourceTree = "<group>"; };
-		E8FF5ABD2BC7C92B0049A49F /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
-		E8FF5ABE2BC7C92B0049A49F /* WireframeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WireframeBuilder.swift; sourceTree = "<group>"; };
-		E8FF5AC02BC7C92B0049A49F /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +158,6 @@
 		E80F8F5C2BC7A31B00D65531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E8FF5AA72BC7C7B90049A49F /* Architecture */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -249,36 +204,6 @@
 				E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E8FF5AA72BC7C7B90049A49F /* Architecture */ = {
-			isa = PBXGroup;
-			children = (
-				E8FF5ABA2BC7C92B0049A49F /* ResolvedWireframe.swift */,
-				E8FF5ABB2BC7C92B0049A49F /* RouteWireframe.swift */,
-				E8FF5AC02BC7C92B0049A49F /* Routing.swift */,
-				E8FF5ABD2BC7C92B0049A49F /* Wireframe.swift */,
-				E8FF5ABE2BC7C92B0049A49F /* WireframeBuilder.swift */,
-				E8FF5ABC2BC7C92B0049A49F /* WireframeView.swift */,
-				E8FF5A952BC7C7B90049A49F /* Context.swift */,
-				E8FF5A962BC7C7B90049A49F /* ContextConsumer.swift */,
-				E8FF5A972BC7C7B90049A49F /* ContextProvider.swift */,
-				E8FF5A982BC7C7B90049A49F /* EventMonitor.swift */,
-				E8FF5A9A2BC7C7B90049A49F /* Feedback.swift */,
-				E8FF5A9B2BC7C7B90049A49F /* MainThreadScheduler.swift */,
-				E8FF5A9C2BC7C7B90049A49F /* ObservableConsumer.swift */,
-				E8FF5A9D2BC7C7B90049A49F /* ObservableProvider.swift */,
-				E8FF5A9E2BC7C7B90049A49F /* Processor.swift */,
-				E8FF5A9F2BC7C7B90049A49F /* Reducer.swift */,
-				E8FF5AA02BC7C7B90049A49F /* Router.swift */,
-				E8FF5AA12BC7C7B90049A49F /* RouterConsumer.swift */,
-				E8FF5AA22BC7C7B90049A49F /* RouterProvider.swift */,
-				E8FF5AA32BC7C7B90049A49F /* SubContext.swift */,
-				E8FF5AA42BC7C7B90049A49F /* Subsystem.swift */,
-				E8FF5AA52BC7C7B90049A49F /* System.swift */,
-			);
-			name = Architecture;
-			path = Frameworks/Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,12 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E83A3BE02BC3E4F400248AF5 /* Build configuration list for PBXNativeTarget "Lab" */;
 			buildPhases = (
+				E80F8F672BC7B48700D65531 /* Swift Format */,
 				E80F8F662BC7B00300D65531 /* SwiftLint */,
 				E83A3BB72BC3E4F300248AF5 /* Sources */,
 				E83A3BB82BC3E4F300248AF5 /* Frameworks */,
 				E83A3BB92BC3E4F300248AF5 /* Resources */,
 				E80F8F572BC7999900D65531 /* Embed Foundation Extensions */,
-				E80F8F672BC7B48700D65531 /* Swift Format */,
 				E800AC9C2BC7C62B00BED4F0 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -536,28 +461,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8FF5AE02BC7C9A70049A49F /* Router.swift in Sources */,
-				E8FF5AE12BC7C9A70049A49F /* ContextProvider.swift in Sources */,
-				E8FF5AE22BC7C9A70049A49F /* SubContext.swift in Sources */,
-				E8FF5AE32BC7C9A70049A49F /* WireframeView.swift in Sources */,
-				E8FF5AE42BC7C9A70049A49F /* Context.swift in Sources */,
-				E8FF5AE52BC7C9A70049A49F /* System.swift in Sources */,
-				E8FF5AE62BC7C9A70049A49F /* Feedback.swift in Sources */,
-				E8FF5AE72BC7C9A70049A49F /* ObservableConsumer.swift in Sources */,
-				E8FF5AE82BC7C9A70049A49F /* ObservableProvider.swift in Sources */,
-				E8FF5AE92BC7C9A70049A49F /* WireframeBuilder.swift in Sources */,
-				E8FF5AEA2BC7C9A70049A49F /* RouterProvider.swift in Sources */,
-				E8FF5AEC2BC7C9A70049A49F /* Reducer.swift in Sources */,
-				E8FF5AED2BC7C9A70049A49F /* Subsystem.swift in Sources */,
-				E8FF5AEE2BC7C9A70049A49F /* EventMonitor.swift in Sources */,
-				E8FF5AEF2BC7C9A70049A49F /* RouteWireframe.swift in Sources */,
-				E8FF5AF02BC7C9A70049A49F /* Wireframe.swift in Sources */,
-				E8FF5AF12BC7C9A70049A49F /* MainThreadScheduler.swift in Sources */,
-				E8FF5AF22BC7C9A70049A49F /* Routing.swift in Sources */,
-				E8FF5AF32BC7C9A70049A49F /* ResolvedWireframe.swift in Sources */,
-				E8FF5AF42BC7C9A70049A49F /* ContextConsumer.swift in Sources */,
-				E8FF5AF52BC7C9A70049A49F /* Processor.swift in Sources */,
-				E8FF5AF62BC7C9A70049A49F /* RouterConsumer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

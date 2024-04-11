@@ -1,4 +1,3 @@
-import Architecture
 import SwiftUI
 
 struct LoginView: View {
@@ -12,6 +11,10 @@ struct LoginView: View {
             TextField("password", text: $password)
                 .textContentType(.password)
         }
+    }
+
+    var content: some View {
+        Text("Login")
     }
 }
 
