@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E80325BE2BC801CB00760519 /* LoginFeature.swift in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F632BC7A76A00D65531 /* LoginFeature.swift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,6 +16,8 @@
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
+		E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E873D96F2BC8027300DAF86E /* LoginFeature.swift */; };
+		E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E873D9722BC8028900DAF86E /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,6 @@
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		E80F8F512BC7999900D65531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E80F8F532BC7999900D65531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E80F8F632BC7A76A00D65531 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC02BC3E4F300248AF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +72,7 @@
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E83A3BCC2BC3E4F400248AF5 /* LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BD62BC3E4F400248AF5 /* LabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */,
 				E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +134,7 @@
 				E83A3BBD2BC3E4F300248AF5 /* Lab */,
 				E800AC892BC7C48600BED4F0 /* Extensions */,
 				E83A3BBC2BC3E4F300248AF5 /* Products */,
+				E873D9712BC8028900DAF86E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,10 +168,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E873D9712BC8028900DAF86E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				E80F8F632BC7A76A00D65531 /* LoginFeature.swift */,
+				E873D96F2BC8027300DAF86E /* LoginFeature.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -223,6 +233,7 @@
 			name = Lab;
 			packageProductDependencies = (
 				E80F8F612BC7A41F00D65531 /* Supabase */,
+				E873D9722BC8028900DAF86E /* ComposableArchitecture */,
 			);
 			productName = Lab;
 			productReference = E83A3BBB2BC3E4F300248AF5 /* Lab.app */;
@@ -331,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E80325BE2BC801CB00760519 /* LoginFeature.swift in Resources */,
 				E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */,
 				E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */,
 			);
@@ -409,6 +419,7 @@
 			files = (
 				E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
+				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +891,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		E873D9722BC8028900DAF86E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
