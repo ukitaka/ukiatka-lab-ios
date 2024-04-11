@@ -1,5 +1,5 @@
-import SwiftUI
 import Supabase
+import SwiftUI
 
 let client = SupabaseClient(
     supabaseURL: URL(string: "https://xwyamkobysyldtpyljfm.supabase.co")!,
