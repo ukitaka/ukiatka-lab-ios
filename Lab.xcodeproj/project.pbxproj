@@ -108,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E800AC892BC7C48600BED4F0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E80F8F4D2BC7999900D65531 /* ShareExtension */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E80F8F4D2BC7999900D65531 /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,9 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E83A3BBD2BC3E4F300248AF5 /* Lab */,
-				E83A3BCF2BC3E4F400248AF5 /* LabTests */,
-				E83A3BD92BC3E4F400248AF5 /* LabUITests */,
-				E80F8F4D2BC7999900D65531 /* ShareExtension */,
+				E800AC892BC7C48600BED4F0 /* Extensions */,
 				E83A3BBC2BC3E4F300248AF5 /* Products */,
 				E80F8F5C2BC7A31B00D65531 /* Frameworks */,
 			);
@@ -168,20 +174,6 @@
 				E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E83A3BCF2BC3E4F400248AF5 /* LabTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LabTests;
-			sourceTree = "<group>";
-		};
-		E83A3BD92BC3E4F400248AF5 /* LabUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LabUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,7 +456,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShareExtension/Info.plist;
+				INFOPLIST_FILE = Extensions/ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
@@ -491,7 +483,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ShareExtension/Info.plist;
+				INFOPLIST_FILE = Extensions/ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
