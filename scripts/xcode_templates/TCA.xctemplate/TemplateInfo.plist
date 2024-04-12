@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>featureName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Feature name</string>
+			<key>Description</key>
+			<string>The name of feature</string>
+      <key>Default</key>
+      <string>Sample</string>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>featureFileName</string>
+			<key>Name</key>
+			<string>Feature file name</string>
+			<key>Description</key>
+			<string>The name of feature file name.</string>
+      <key>Default</key>
+      <string>___VARIABLE_featureName___Feature.swift</string>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>viewFileName</string>
+			<key>Name</key>
+			<string>View file name</string>
+			<key>Description</key>
+			<string>The name of view file name.</string>
+      <key>Default</key>
+      <string>___VARIABLE_featureName___View.swift</string>
+			<key>Type</key>
+			<string>static</string>
+		</dict>
+	</array>
+</dict>
+</plist>
