@@ -37,8 +37,14 @@ struct RootFeature: Reducer {
                     }
                 }
 
-            case .loginScreen:
+            case .loginScreen(.loginCompleted):
+                return .none
+
+            case .loginScreen(.startLoginFlow):
                 state = .login(.init())
+                return .none
+
+            case .loginScreen:
                 return .none
 
             case .homeScreen:
