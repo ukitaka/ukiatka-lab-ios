@@ -6,7 +6,7 @@ struct RootView: View {
 
     @ViewBuilder
     var body: some View {
-        switch store.state.status {
+        switch store.state {
         case .initial:
             Text("Initial view").onAppear {
                 store.send(.onAppear)
@@ -32,7 +32,7 @@ struct RootView: View {
 
 #Preview {
     RootView(
-        store: Store(initialState: RootFeature.State()) {
+        store: Store(initialState: RootFeature.State.initial) {
             RootFeature()
         }
     )

@@ -11,7 +11,7 @@ let client = SupabaseClient(
 struct LabApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView(store: Store(initialState: .init(), reducer: {
+            RootView(store: Store(initialState: .initial, reducer: {
                 RootFeature()
             }))
         }

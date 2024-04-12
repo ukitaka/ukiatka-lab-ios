@@ -6,20 +6,16 @@ import SwiftUI
 @Reducer
 struct RootFeature: Reducer {
     @ObservableState
-    struct State {
-        enum Status {
-            case initial
-            case loading
-            case login
-            case home
-        }
-
-        var status: Status = .initial
+    enum State: Equatable {
+        case initial
+        case loading
+        case login
+        case home
     }
 
     enum Action {
         case onAppear
-        case loginScreen
+        case loginScreen(LoginFeature.Action)
         case homeScreen
     }
 
@@ -29,24 +25,24 @@ struct RootFeature: Reducer {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                guard state.status == .initial else {
+                guard state == .initial else {
                     return .none
                 }
-                state.status = .loading
+                state = .loading
                 return .run { send in
                     if await loginSessionClient.isLoggedIn() {
                         await send(.homeScreen)
                     } else {
-                        await send(.loginScreen)
+                        await send(.loginScreen(.initialLoadStarted))
                     }
                 }
 
             case .loginScreen:
-                state.status = .login
+                state = .login
                 return .none
 
             case .homeScreen:
-                state.status = .home
+                state = .home
                 return .none
             }
         }
