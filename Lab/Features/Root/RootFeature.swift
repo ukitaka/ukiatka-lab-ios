@@ -17,22 +17,17 @@ struct RootFeature {
         var status: Status = .initial
     }
 
-    enum Action: BindableAction {
-        case binding(BindingAction<State>)
+    enum Action {
         case onAppear
-        case showLoginScreen
-        case showHomeScreen
+        case loginScreen
+        case homeScreen
     }
 
     @Dependency(\.loginSessionClient) private var loginSessionClient
 
     var body: some ReducerOf<Self> {
-        BindingReducer()
         Reduce { state, action in
             switch action {
-            case .binding:
-                return .none
-
             case .onAppear:
                 guard state.status == .initial else {
                     return .none
@@ -40,17 +35,17 @@ struct RootFeature {
                 state.status = .loading
                 return .run { send in
                     if await loginSessionClient.isLoggedIn() {
-                        await send(.showHomeScreen)
+                        await send(.homeScreen)
                     } else {
-                        await send(.showLoginScreen)
+                        await send(.loginScreen)
                     }
                 }
 
-            case .showLoginScreen:
+            case .loginScreen:
                 state.status = .login
                 return .none
 
-            case .showHomeScreen:
+            case .homeScreen:
                 state.status = .home
                 return .none
             }
