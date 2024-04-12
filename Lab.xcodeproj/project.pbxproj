@@ -15,6 +15,7 @@
 		E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865CC2BC8CCAE00411BC9 /* RootFeature.swift */; };
 		E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865CD2BC8CCAE00411BC9 /* RootView.swift */; };
 		E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D32BC8E58500411BC9 /* LogoLoadingView.swift */; };
+		E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */; };
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
@@ -69,6 +70,7 @@
 		E81865CC2BC8CCAE00411BC9 /* RootFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
 		E81865CD2BC8CCAE00411BC9 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E81865D32BC8E58500411BC9 /* LogoLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoLoadingView.swift; sourceTree = "<group>"; };
+		E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSessionClient.swift; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				E81865D12BC8E50900411BC9 /* Features */,
 				E8FF5AF92BC7FFD10049A49F /* Assets */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
+				E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
