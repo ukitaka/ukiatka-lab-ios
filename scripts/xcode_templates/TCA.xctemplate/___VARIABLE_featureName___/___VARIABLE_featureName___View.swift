@@ -1,7 +1,7 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct ___VARIABLE_featureName___View {
+struct ___VARIABLE_featureName___View: View {
     @Bindable var store: StoreOf<___VARIABLE_featureName___Feature>
 
     @ViewBuilder

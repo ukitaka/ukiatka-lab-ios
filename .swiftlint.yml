@@ -116,3 +116,6 @@ cyclomatic_complexity:
 
 nesting:
   type_level: 3
+
+excluded:
+  - scripts
