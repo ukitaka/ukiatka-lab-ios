@@ -33,12 +33,12 @@ struct RootFeature: Reducer {
                     if await loginSessionClient.isLoggedIn() {
                         await send(.homeScreen)
                     } else {
-                        await send(.loginScreen(.initialLoadStarted))
+                        await send(.loginScreen(.startLoginFlow))
                     }
                 }
 
             case .loginScreen:
-                state = .login(.init(status: .initialLoading))
+                state = .login(.init())
                 return .none
 
             case .homeScreen:

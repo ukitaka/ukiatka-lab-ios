@@ -6,19 +6,17 @@ struct LoginFeature: Sendable {
     @ObservableState
     struct State: Equatable {
         enum Status: Equatable {
-            case initialLoading
             case inputting
             case submitting
         }
 
-        var status: Status = .initialLoading
+        var status: Status = .inputting
         var username: String = ""
         var password: String = ""
     }
 
     enum Action: BindableAction {
-        case initialLoadStarted
-        case initialLoadCompleted
+        case startLoginFlow
         case loginButtonTapped
         case loginCompleted
         case binding(BindingAction<State>)
@@ -31,19 +29,7 @@ struct LoginFeature: Sendable {
             case .binding:
                 return .none
 
-            case .initialLoadStarted:
-                return .run { send in
-                    let user = try? await client.auth.user()
-
-                    if user != nil {
-                        await send(.loginCompleted)
-                    } else {
-                        await send(.initialLoadCompleted)
-                    }
-                }
-
-            case .initialLoadCompleted:
-                state.status = .inputting
+            case .startLoginFlow:
                 return .none
 
             case .loginButtonTapped:
@@ -71,14 +57,6 @@ struct LoginView: View {
     @ViewBuilder
     var body: some View {
         switch store.status {
-        case .initialLoading:
-            ProgressView()
-                .progressViewStyle(.circular)
-                .scaleEffect(2, anchor: .center)
-                .onAppear {
-                    store.send(.initialLoadStarted)
-                }
-
         case .inputting:
             Form {
                 Section {
