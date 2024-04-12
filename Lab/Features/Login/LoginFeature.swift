@@ -2,14 +2,13 @@ import ComposableArchitecture
 import SwiftUI
 
 @Reducer
-struct LoginFeature {
+struct LoginFeature: Sendable {
     @ObservableState
-    struct State {
-        enum Status {
+    struct State: Equatable {
+        enum Status: Equatable {
             case initialLoading
             case inputting
             case submitting
-            case error(Error)
         }
 
         var status: Status = .initialLoading
@@ -95,9 +94,6 @@ struct LoginView: View {
             ProgressView()
                 .progressViewStyle(.circular)
                 .scaleEffect(2, anchor: .center)
-
-        case let .error(error):
-            Text(error.localizedDescription)
         }
     }
 }
