@@ -21,7 +21,11 @@ struct RootView: View {
             LoginView(store: store.scope(state: \.login, action: \.loginScreen))
 
         case .home:
-            Text("Home") // TODO: fix later
+            VStack {
+                Button("Logout") {
+                    store.send(.logout)
+                }
+            }
         }
     }
 }

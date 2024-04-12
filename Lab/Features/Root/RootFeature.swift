@@ -15,6 +15,7 @@ struct RootFeature: Reducer {
 
     enum Action {
         case onAppear
+        case logout
         case loginScreen(LoginFeature.Action)
         case homeScreen
     }
@@ -50,6 +51,12 @@ struct RootFeature: Reducer {
             case .homeScreen:
                 state = .home
                 return .none
+
+            case .logout:
+                state = .login(.init())
+                return .run { _ in
+                    try await loginSessionClient.logout()
+                }
             }
         }
         .ifCaseLet(\.login, action: \.loginScreen) {
