@@ -3,7 +3,7 @@ import Foundation
 import Supabase
 
 protocol LoginSessionClientProtocol: Sendable {
-    func isLoggedIn() async throws -> Bool
+    func isLoggedIn() async -> Bool
     func login(email: String, password: String) async throws
 }
 

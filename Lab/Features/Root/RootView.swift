@@ -16,12 +16,24 @@ struct RootView: View {
             VStack {
                 LogoLoadingView()
             }
+
+        case .login:
+            LoginView(
+                store: Store(initialState: LoginFeature.State()) {
+                    LoginFeature()
+                }
+            )
+
+        case .home:
+            Text("Home") // TODO: fix later
         }
     }
 }
 
 #Preview {
     RootView(
-        store: Store(initialState: RootFeature.State()) {}
+        store: Store(initialState: RootFeature.State()) {
+            RootFeature()
+        }
     )
 }
