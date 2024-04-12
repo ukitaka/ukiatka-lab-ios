@@ -2,7 +2,7 @@ import ComposableArchitecture
 import SwiftUI
 
 struct RootView: View {
-    @Bindable var store: StoreOf<RootFeature>
+    var store: StoreOf<RootFeature>
 
     @ViewBuilder
     var body: some View {
