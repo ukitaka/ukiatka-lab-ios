@@ -1,11 +1,13 @@
 import ComposableArchitecture
 import SwiftUI
 
-struct RootView {
+struct RootView: View {
     @Bindable var store: StoreOf<RootFeature>
 
     @ViewBuilder
-    var body: some View {}
+    var body: some View {
+        Text("")
+    }
 }
 
 #Preview {

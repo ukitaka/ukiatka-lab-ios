@@ -4,7 +4,13 @@ import SwiftUI
 @Reducer
 struct RootFeature {
     @ObservableState
-    struct State {}
+    struct State {
+        enum Status {
+            case initial
+        }
+
+        var status: Status = .initial
+    }
 
     enum Action: BindableAction {
         case binding(BindingAction<State>)

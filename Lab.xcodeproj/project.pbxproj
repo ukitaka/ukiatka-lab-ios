@@ -12,7 +12,8 @@
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E80F8F5E2BC7A31B00D65531 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = E80F8F5D2BC7A31B00D65531 /* Auth */; };
 		E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E80F8F612BC7A41F00D65531 /* Supabase */; };
-		E81865C62BC8CA7B00411BC9 /* Root in Resources */ = {isa = PBXBuildFile; fileRef = E81865C52BC8CA7B00411BC9 /* Root */; };
+		E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865CC2BC8CCAE00411BC9 /* RootFeature.swift */; };
+		E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865CD2BC8CCAE00411BC9 /* RootView.swift */; };
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BC02BC3E4F300248AF5 /* ContentView.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
@@ -65,7 +66,8 @@
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		E80F8F512BC7999900D65531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		E80F8F532BC7999900D65531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E81865C52BC8CA7B00411BC9 /* Root */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Root; sourceTree = "<group>"; };
+		E81865CC2BC8CCAE00411BC9 /* RootFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootFeature.swift; sourceTree = "<group>"; };
+		E81865CD2BC8CCAE00411BC9 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E83A3BBB2BC3E4F300248AF5 /* Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabApp.swift; sourceTree = "<group>"; };
 		E83A3BC02BC3E4F300248AF5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -130,6 +132,15 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
+		E81865CE2BC8CCAE00411BC9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				E81865CC2BC8CCAE00411BC9 /* RootFeature.swift */,
+				E81865CD2BC8CCAE00411BC9 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		E83A3BB22BC3E4F300248AF5 = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +165,11 @@
 		E83A3BBD2BC3E4F300248AF5 /* Lab */ = {
 			isa = PBXGroup;
 			children = (
+				E81865CE2BC8CCAE00411BC9 /* Root */,
 				E8FF5AF92BC7FFD10049A49F /* Assets */,
 				E8FF5AF82BC7FF6D0049A49F /* Login */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
 				E83A3BC02BC3E4F300248AF5 /* ContentView.swift */,
-				E81865C52BC8CA7B00411BC9 /* Root */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -347,7 +358,6 @@
 			files = (
 				E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */,
 				E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */,
-				E81865C62BC8CA7B00411BC9 /* Root in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,9 +431,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E83A3BC12BC3E4F300248AF5 /* ContentView.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
+				E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
