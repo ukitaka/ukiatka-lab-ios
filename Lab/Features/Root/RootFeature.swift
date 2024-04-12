@@ -4,7 +4,7 @@ import DependenciesMacros
 import SwiftUI
 
 @Reducer
-struct RootFeature {
+struct RootFeature: Reducer {
     @ObservableState
     struct State {
         enum Status {
