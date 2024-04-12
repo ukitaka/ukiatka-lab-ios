@@ -18,11 +18,7 @@ struct RootView: View {
             }
 
         case .login:
-            LoginView(
-                store: Store(initialState: LoginFeature.State()) {
-                    LoginFeature()
-                }
-            )
+            LoginView(store: store.scope(state: \.login, action: \.loginScreen))
 
         case .home:
             Text("Home") // TODO: fix later

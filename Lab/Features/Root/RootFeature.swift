@@ -9,7 +9,7 @@ struct RootFeature: Reducer {
     enum State: Equatable {
         case initial
         case loading
-        case login
+        case login(LoginFeature.State)
         case home
     }
 
@@ -38,13 +38,16 @@ struct RootFeature: Reducer {
                 }
 
             case .loginScreen:
-                state = .login
+                state = .login(.init(status: .initialLoading))
                 return .none
 
             case .homeScreen:
                 state = .home
                 return .none
             }
+        }
+        .ifCaseLet(\.login, action: \.loginScreen) {
+            LoginFeature()
         }
     }
 }

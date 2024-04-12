@@ -17,7 +17,7 @@ actor LoginSessionClient: Sendable {
     }
 }
 
-private enum LoginSesssionClientKey: DependencyKey {
+enum LoginSesssionClientKey: DependencyKey {
     static let liveValue: LoginSessionClient = .init()
 }
 
