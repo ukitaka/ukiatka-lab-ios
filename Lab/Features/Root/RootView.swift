@@ -18,7 +18,8 @@ struct RootView: View {
             }
 
         case .login:
-            LoginView(store: store.scope(state: \.login, action: \.loginScreen))
+            // ここあとでreportしたい. !の有無で挙動が変わる。(コンパイルエラーにはならない)
+            LoginView(store: store.scope(state: \.login, action: \.loginScreen)!)
 
         case .home:
             VStack {

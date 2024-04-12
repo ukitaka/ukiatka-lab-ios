@@ -22,6 +22,8 @@ struct LoginFeature: Sendable {
         case binding(BindingAction<State>)
     }
 
+    @Dependency(\.loginSessionClient) private var loginSessionClient
+
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
@@ -35,8 +37,7 @@ struct LoginFeature: Sendable {
             case .loginButtonTapped:
                 return .run { [username = state.username, password = state.password] send in
                     do {
-                        let session = try await client.auth.signIn(email: username, password: password)
-                        print(session.user.email ?? "no-email")
+                        try await loginSessionClient.login(email: username, password: password)
                         await send(.loginCompleted)
                     } catch {
                         print(error)
