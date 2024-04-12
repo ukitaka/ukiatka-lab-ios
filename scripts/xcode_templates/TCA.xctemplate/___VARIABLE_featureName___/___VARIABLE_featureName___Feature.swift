@@ -18,7 +18,7 @@ struct ___VARIABLE_featureName___Feature {
 
     var body: some ReducerOf<Self> {
         BindingReducer()
-        Reduce { state, action in
+        Reduce { _, action in
             switch action {
             case .binding:
                 .none

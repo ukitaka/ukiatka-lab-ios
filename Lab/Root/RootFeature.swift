@@ -7,6 +7,7 @@ struct RootFeature {
     struct State {
         enum Status {
             case initial
+            case loading
         }
 
         var status: Status = .initial
@@ -14,14 +15,22 @@ struct RootFeature {
 
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case onAppear
     }
 
     var body: some ReducerOf<Self> {
         BindingReducer()
-        Reduce { _, action in
+        Reduce { state, action in
             switch action {
             case .binding:
-                .none
+                return .none
+
+            case .onAppear:
+                guard state.status == .initial else {
+                    return .none
+                }
+                state.status = .loading
+                return .none
             }
         }
     }
