@@ -29,8 +29,6 @@ struct RootFeature: Reducer {
             case .onAppear:
                 return .run { send in
                     if await loginSessionClient.isLoggedIn() {
-                        let bookmarks = try await LabAPIClient(baseURL: "https://ukitaka-lab.app").fetchBookmarks()
-                        print(bookmarks)
                         await send(.startHomeFlow)
                     } else {
                         await send(.startLoginFlow)
@@ -42,11 +40,11 @@ struct RootFeature: Reducer {
                 return .none
 
             case .startHomeFlow:
-                state = .home(.init())
+                state = .home(.fetching)
                 return .none
 
             case .login(.loginCompleted):
-                state = .home(.init())
+                state = .home(.fetching)
                 return .none
 
             case .login:

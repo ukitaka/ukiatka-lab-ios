@@ -1,31 +1,40 @@
 import ComposableArchitecture
+import Dependencies
 import SwiftUI
 
 @Reducer
 struct HomeFeature {
     @ObservableState
-    struct State: Equatable {
-        enum Status: Equatable {
-            case initial
-        }
-
-        var status: Status = .initial
+    enum State: Equatable {
+        case fetching
+        case bookmarks([Bookmark])
     }
 
     enum Action: BindableAction {
-        case onAppear
+        case startFetching
+        case completeFetching([Bookmark])
         case binding(BindingAction<State>)
     }
 
     var body: some ReducerOf<Self> {
         BindingReducer()
-        Reduce { _, action in
+        Reduce { state, action in
             switch action {
             case .binding:
-                .none
+                return .none
 
-            case .onAppear:
-                .none
+            case .startFetching:
+                return .run { send in
+                    // TODO: use dependency
+                    let bookmarks = try await LabAPIClient(baseURL: "https://ukitaka-lab.app").fetchBookmarks()
+                    print(bookmarks)
+
+                    await send(.completeFetching(bookmarks))
+                }
+
+            case let .completeFetching(bookmarks):
+                state = .bookmarks(bookmarks)
+                return .none
             }
         }
     }
