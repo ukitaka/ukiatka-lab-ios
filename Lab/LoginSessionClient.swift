@@ -20,9 +20,9 @@ actor LoginSessionClient: Sendable {
         try await supabseClient.auth.signOut(scope: .local)
     }
 
-    func tokens() async throws -> (String, String) {
+    func accessToken() async throws -> String {
         let session = try await supabseClient.auth.session
-        return (session.accessToken, session.refreshToken)
+        return session.accessToken
     }
 }
 

@@ -17,13 +17,12 @@ actor LabAPIClient: Sendable {
     }
 
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
-        let (accessToken, refreshToken) = try await loginSessionClient.tokens()
+        let accessToken = try await loginSessionClient.accessToken()
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.path = path
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
         request.setValue(accessToken, forHTTPHeaderField: "X-LAB-ACCESS-TOKEN")
-        request.setValue(refreshToken, forHTTPHeaderField: "X-LAB-REFRESH-TOKEN")
         return request
     }
 }
