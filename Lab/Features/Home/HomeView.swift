@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Shimmer
 import SwiftUI
 
 struct HomeView: View {
@@ -16,8 +17,10 @@ struct HomeView: View {
                                 image.resizable()
                                     .frame(maxWidth: .infinity)
                                     .scaledToFit()
+
                             } placeholder: {
-                                LogoLoadingView(width: 32.0, height: 32.0)
+                                Skeleton()
+                                    .frame(minHeight: 200)
                             }
                             Spacer()
                         } else {

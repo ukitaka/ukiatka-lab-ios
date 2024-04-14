@@ -24,6 +24,8 @@
 		E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17212BCB6F07004F28E4 /* HomeView.swift */; };
 		E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
 		E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
+		E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FE62BCBC70200BA2361 /* Skeleton.swift */; };
+		E8C05FE92BCBCA8B00BA2361 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = E8C05FE82BCBCA8B00BA2361 /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabAPIClient.swift; sourceTree = "<group>"; };
 		E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
+		E8C05FE62BCBC70200BA2361 /* Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C05FE92BCBCA8B00BA2361 /* Shimmer in Frameworks */,
 				E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */,
 				E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */,
 			);
@@ -133,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E81865D32BC8E58500411BC9 /* LogoLoadingView.swift */,
+				E8C05FE62BCBC70200BA2361 /* Skeleton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			packageProductDependencies = (
 				E80F8F612BC7A41F00D65531 /* Supabase */,
 				E873D9722BC8028900DAF86E /* ComposableArchitecture */,
+				E8C05FE82BCBCA8B00BA2361 /* Shimmer */,
 			);
 			productName = Lab;
 			productReference = E83A3BBB2BC3E4F300248AF5 /* Lab.app */;
@@ -304,6 +310,7 @@
 			packageReferences = (
 				E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 			);
 			productRefGroup = E83A3BBC2BC3E4F300248AF5 /* Products */;
 			projectDirPath = "";
@@ -390,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
+				E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */,
 				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
@@ -718,6 +726,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
 		E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -738,6 +754,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		E8C05FE82BCBCA8B00BA2361 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
