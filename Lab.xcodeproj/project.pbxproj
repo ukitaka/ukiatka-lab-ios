@@ -197,9 +197,8 @@
 				E81865D22BC8E57100411BC9 /* Components */,
 				E81865D12BC8E50900411BC9 /* Features */,
 				E8FF5AF92BC7FFD10049A49F /* Assets */,
+				E87D172A2BCBA29A004F28E4 /* Dependencies */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
-				E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */,
-				E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -234,6 +233,15 @@
 				E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		E87D172A2BCBA29A004F28E4 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */,
+				E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */,
+			);
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
