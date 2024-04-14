@@ -12,25 +12,12 @@ struct HomeView: View {
             NavigationStack {
                 ScrollView {
                     ForEach(bookmarks) { bookmark in
-                        if let imageUrl = bookmark.imageUrl {
-                            AsyncImage(url: URL(string: imageUrl)) { image in
-                                image.resizable()
-                                    .frame(maxWidth: .infinity)
-                                    .scaledToFit()
-                            } placeholder: {
-                                Skeleton()
-                                    .frame(minHeight: 200)
-                            }
-                            Spacer()
-                        } else {
-                            //                        Text(bookmark.title)
-                            Spacer()
-                        }
+                        BookmarkListItem(bookmark: bookmark)
                     }
                     .navigationDestination(for: Bookmark.self) { bookmark in
                         Text(bookmark.title)
                     }
-                }.navigationTitle("ブックマーク")
+                }.navigationTitle("Bookmarks")
             }
 
         case .fetching:
