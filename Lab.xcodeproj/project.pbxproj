@@ -23,6 +23,8 @@
 		E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E873D9722BC8028900DAF86E /* ComposableArchitecture */; };
 		E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17202BCB6F07004F28E4 /* HomeFeature.swift */; };
 		E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17212BCB6F07004F28E4 /* HomeView.swift */; };
+		E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
+		E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E87D17202BCB6F07004F28E4 /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabAPIClient.swift; sourceTree = "<group>"; };
+		E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,11 +193,13 @@
 		E83A3BBD2BC3E4F300248AF5 /* Lab */ = {
 			isa = PBXGroup;
 			children = (
+				E87D17272BCB7F2F004F28E4 /* Domain */,
 				E81865D22BC8E57100411BC9 /* Components */,
 				E81865D12BC8E50900411BC9 /* Features */,
 				E8FF5AF92BC7FFD10049A49F /* Assets */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
 				E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */,
+				E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -220,6 +226,14 @@
 				E87D17212BCB6F07004F28E4 /* HomeView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E87D17272BCB7F2F004F28E4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
@@ -465,10 +479,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
+				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
+				E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */,
 				E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */,
 				E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */,
 				E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */,
