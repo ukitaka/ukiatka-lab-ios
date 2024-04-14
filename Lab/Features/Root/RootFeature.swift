@@ -7,7 +7,6 @@ import SwiftUI
 struct RootFeature: Reducer {
     @ObservableState
     enum State: Equatable {
-        case initial
         case loading
         case login(LoginFeature.State)
         case home(HomeFeature.State)
@@ -16,6 +15,8 @@ struct RootFeature: Reducer {
     enum Action {
         case onAppear
         case logout
+        case startLoginFlow
+        case startHomeFlow
         case login(LoginFeature.Action)
         case home(HomeFeature.Action)
     }
@@ -26,31 +27,30 @@ struct RootFeature: Reducer {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                guard state == .initial else {
-                    return .none
-                }
-                state = .loading
                 return .run { send in
                     if await loginSessionClient.isLoggedIn() {
-                        await send(.home(.onAppear))
+                        await send(.startHomeFlow)
                     } else {
-                        await send(.login(.startLoginFlow))
+                        await send(.startLoginFlow)
                     }
                 }
 
-            case .login(.loginCompleted):
+            case .startLoginFlow:
+                state = .login(.init())
+                return .none
+
+            case .startHomeFlow:
                 state = .home(.init())
                 return .none
 
-            case .login(.startLoginFlow):
-                state = .login(.init())
+            case .login(.loginCompleted):
+                state = .home(.init())
                 return .none
 
             case .login:
                 return .none
 
             case .home:
-                state = .home(.init())
                 return .none
 
             case .logout:

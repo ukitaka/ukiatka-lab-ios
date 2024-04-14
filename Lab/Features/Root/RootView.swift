@@ -7,16 +7,11 @@ struct RootView: View {
     @ViewBuilder
     var body: some View {
         switch store.state {
-        case .initial:
-            VStack {
-                Image("Icon")
-            }.onAppear {
-                store.send(.onAppear)
-            }
-
         case .loading:
             VStack {
                 LogoLoadingView()
+            }.onAppear {
+                store.send(.onAppear)
             }
 
         case .login:
@@ -24,18 +19,14 @@ struct RootView: View {
             LoginView(store: store.scope(state: \.login, action: \.login)!)
 
         case .home:
-            VStack {
-                Button("Logout") {
-                    store.send(.logout)
-                }
-            }
+            HomeView(store: store.scope(state: \.home, action: \.home)!)
         }
     }
 }
 
 #Preview {
     RootView(
-        store: Store(initialState: RootFeature.State.initial) {
+        store: Store(initialState: .loading) {
             RootFeature()
         }
     )
