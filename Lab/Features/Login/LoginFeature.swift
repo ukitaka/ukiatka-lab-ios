@@ -29,13 +29,13 @@ struct LoginFeature: Sendable {
         Reduce { state, action in
             switch action {
             case .binding:
-                return .none
+                .none
 
             case .startLoginFlow:
-                return .none
+                .none
 
             case .loginButtonTapped:
-                return .run { [username = state.username, password = state.password] send in
+                .run { [username = state.username, password = state.password] send in
                     do {
                         try await loginSessionClient.login(email: username, password: password)
                         await send(.loginCompleted)
@@ -45,8 +45,7 @@ struct LoginFeature: Sendable {
                 }
 
             case .loginCompleted:
-                print("logged-in!!!")
-                return .none
+                .none
             }
         }
     }

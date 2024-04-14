@@ -8,7 +8,9 @@ struct RootView: View {
     var body: some View {
         switch store.state {
         case .initial:
-            Text("Initial view").onAppear {
+            VStack {
+                Image("Icon")
+            }.onAppear {
                 store.send(.onAppear)
             }
 
@@ -19,7 +21,7 @@ struct RootView: View {
 
         case .login:
             // ここあとでreportしたい. !の有無で挙動が変わる。(コンパイルエラーにはならない)
-            LoginView(store: store.scope(state: \.login, action: \.loginScreen)!)
+            LoginView(store: store.scope(state: \.login, action: \.login)!)
 
         case .home:
             VStack {

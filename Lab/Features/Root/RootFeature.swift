@@ -10,14 +10,14 @@ struct RootFeature: Reducer {
         case initial
         case loading
         case login(LoginFeature.State)
-        case home
+        case home(HomeFeature.State)
     }
 
     enum Action {
         case onAppear
         case logout
-        case loginScreen(LoginFeature.Action)
-        case homeScreen
+        case login(LoginFeature.Action)
+        case home(HomeFeature.Action)
     }
 
     @Dependency(\.loginSessionClient) private var loginSessionClient
@@ -32,24 +32,25 @@ struct RootFeature: Reducer {
                 state = .loading
                 return .run { send in
                     if await loginSessionClient.isLoggedIn() {
-                        await send(.homeScreen)
+                        await send(.home(.onAppear))
                     } else {
-                        await send(.loginScreen(.startLoginFlow))
+                        await send(.login(.startLoginFlow))
                     }
                 }
 
-            case .loginScreen(.loginCompleted):
+            case .login(.loginCompleted):
+                state = .home(.init())
                 return .none
 
-            case .loginScreen(.startLoginFlow):
+            case .login(.startLoginFlow):
                 state = .login(.init())
                 return .none
 
-            case .loginScreen:
+            case .login:
                 return .none
 
-            case .homeScreen:
-                state = .home
+            case .home:
+                state = .home(.init())
                 return .none
 
             case .logout:
@@ -59,8 +60,11 @@ struct RootFeature: Reducer {
                 }
             }
         }
-        .ifCaseLet(\.login, action: \.loginScreen) {
+        .ifCaseLet(\.login, action: \.login) {
             LoginFeature()
+        }
+        .ifCaseLet(\.home, action: \.home) {
+            HomeFeature()
         }
     }
 }

@@ -21,6 +21,8 @@
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
 		E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E873D96F2BC8027300DAF86E /* LoginFeature.swift */; };
 		E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E873D9722BC8028900DAF86E /* ComposableArchitecture */; };
+		E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17202BCB6F07004F28E4 /* HomeFeature.swift */; };
+		E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17212BCB6F07004F28E4 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		E83A3BCC2BC3E4F400248AF5 /* LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83A3BD62BC3E4F400248AF5 /* LabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
+		E87D17202BCB6F07004F28E4 /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
+		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		E81865D12BC8E50900411BC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E87D17222BCB6F07004F28E4 /* Home */,
 				E8FF5AF82BC7FF6D0049A49F /* Login */,
 				E81865CE2BC8CCAE00411BC9 /* Root */,
 			);
@@ -206,6 +211,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E87D17222BCB6F07004F28E4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E87D17202BCB6F07004F28E4 /* HomeFeature.swift */,
+				E87D17212BCB6F07004F28E4 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
@@ -452,8 +466,10 @@
 			files = (
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
+				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
+				E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */,
 				E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */,
 				E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */,
 			);
