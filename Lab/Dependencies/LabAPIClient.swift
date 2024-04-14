@@ -12,7 +12,6 @@ actor LabAPIClient: Sendable {
 
     func fetchBookmarks() async throws -> [Bookmark] {
         let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/api/bookmarks"))
-        print(String(data: data, encoding: .utf8)!)
         return try JSONDecoder().decode([Bookmark].self, from: data)
     }
 
@@ -24,5 +23,16 @@ actor LabAPIClient: Sendable {
         request.httpMethod = "GET"
         request.setValue(accessToken, forHTTPHeaderField: "X-LAB-ACCESS-TOKEN")
         return request
+    }
+}
+
+enum LabAPIClientKey: DependencyKey {
+    static let liveValue: LabAPIClient = .init(baseURL: "https://ukitaka-lab.app")
+}
+
+extension DependencyValues {
+    var labAPIClient: LabAPIClient {
+        get { self[LabAPIClientKey.self] }
+        set { self[LabAPIClientKey.self] = newValue }
     }
 }

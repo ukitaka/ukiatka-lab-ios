@@ -16,6 +16,8 @@ struct HomeFeature {
         case binding(BindingAction<State>)
     }
 
+    @Dependency(\.labAPIClient) private var labAPIClient
+
     var body: some ReducerOf<Self> {
         BindingReducer()
         Reduce { state, action in
@@ -25,10 +27,7 @@ struct HomeFeature {
 
             case .startFetching:
                 return .run { send in
-                    // TODO: use dependency
-                    let bookmarks = try await LabAPIClient(baseURL: "https://ukitaka-lab.app").fetchBookmarks()
-                    print(bookmarks)
-
+                    let bookmarks = try await labAPIClient.fetchBookmarks()
                     await send(.completeFetching(bookmarks))
                 }
 

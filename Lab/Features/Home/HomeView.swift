@@ -17,7 +17,6 @@ struct HomeView: View {
                                 image.resizable()
                                     .frame(maxWidth: .infinity)
                                     .scaledToFit()
-
                             } placeholder: {
                                 Skeleton()
                                     .frame(minHeight: 200)
