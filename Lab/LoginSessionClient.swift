@@ -19,6 +19,11 @@ actor LoginSessionClient: Sendable {
     func logout() async throws {
         try await supabseClient.auth.signOut(scope: .local)
     }
+
+    func tokens() async throws -> (String, String) {
+        let session = try await supabseClient.auth.session
+        return (session.accessToken, session.refreshToken)
+    }
 }
 
 enum LoginSesssionClientKey: DependencyKey {

@@ -41,7 +41,10 @@ struct RootFeature: Reducer {
 
             case .startHomeFlow:
                 state = .home(.init())
-                return .none
+                return .run { _ in
+                    let bookmarks = try await LabAPIClient(baseURL: "https://ukitaka-lab.app").fetchBookmarks()
+                    print(bookmarks)
+                }
 
             case .login(.loginCompleted):
                 state = .home(.init())
