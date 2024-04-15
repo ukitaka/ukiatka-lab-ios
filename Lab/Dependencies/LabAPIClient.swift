@@ -26,7 +26,12 @@ actor LabAPIClient: Sendable {
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.httpBody = jsonData
 
-        _ = try await URLSession.shared.data(for: req)
+        let (data, res) = try await URLSession.shared.data(for: req)
+
+        if let res = res as? HTTPURLResponse {
+            print(res.statusCode)
+            print(String(data: data, encoding: .utf8) ?? "")
+        }
     }
 
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
