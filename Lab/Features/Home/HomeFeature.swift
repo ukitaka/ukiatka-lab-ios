@@ -8,11 +8,14 @@ struct HomeFeature {
     struct State: Equatable {
         var isFetching = true
         var bookmarks: [Bookmark] = []
+        @Presents var addBookmark: AddBookmarkFeature.State?
     }
 
     enum Action: BindableAction {
         case startFetching
         case completeFetching([Bookmark])
+        case addButtonTapped
+        case addBookmark(PresentationAction<AddBookmarkFeature.Action>)
         case binding(BindingAction<State>)
     }
 
@@ -36,7 +39,17 @@ struct HomeFeature {
                 state.isFetching = false
                 state.bookmarks = bookmarks
                 return .none
+
+            case .addButtonTapped:
+                state.addBookmark = AddBookmarkFeature.State()
+                return .none
+
+            case .addBookmark:
+                return .none // delegate to AddBookmarkFeature
             }
+        }
+        .ifLet(\.$addBookmark, action: \.addBookmark) {
+            AddBookmarkFeature()
         }
     }
 }

@@ -4,7 +4,7 @@ import SwiftUI
 @Reducer
 struct AddBookmarkFeature {
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var urlString: String = ""
     }
 
