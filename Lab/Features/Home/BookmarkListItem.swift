@@ -40,7 +40,8 @@ struct BookmarkListItem: View {
                     Skeleton()
                         .frame(minHeight: 200)
                 }
-            }.padding(.all, 16.0)
+            }
+            .padding([.leading, .trailing], 16.0)
         }
     }
 }
