@@ -27,6 +27,8 @@
 		E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FE62BCBC70200BA2361 /* Skeleton.swift */; };
 		E8C05FE92BCBCA8B00BA2361 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = E8C05FE82BCBCA8B00BA2361 /* Shimmer */; };
 		E8C05FEB2BCC10C200BA2361 /* BookmarkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEA2BCC10C200BA2361 /* BookmarkListItem.swift */; };
+		E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */; };
+		E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		E8C05FE62BCBC70200BA2361 /* Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		E8C05FEA2BCC10C200BA2361 /* BookmarkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListItem.swift; sourceTree = "<group>"; };
+		E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkFeature.swift; sourceTree = "<group>"; };
+		E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		E81865D12BC8E50900411BC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E8C05FF02BCCB41400BA2361 /* AddBookmark */,
 				E87D17222BCB6F07004F28E4 /* Home */,
 				E8FF5AF82BC7FF6D0049A49F /* Login */,
 				E81865CE2BC8CCAE00411BC9 /* Root */,
@@ -217,6 +222,16 @@
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
+		};
+		E8C05FF02BCCB41400BA2361 /* AddBookmark */ = {
+			isa = PBXGroup;
+			children = (
+				E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */,
+				E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */,
+			);
+			name = AddBookmark;
+			path = Lab/Features/AddBookmark;
+			sourceTree = SOURCE_ROOT;
 		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
 			isa = PBXGroup;
@@ -399,8 +414,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */,
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
 				E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */,
+				E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */,
 				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
