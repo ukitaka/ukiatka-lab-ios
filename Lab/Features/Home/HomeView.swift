@@ -7,12 +7,16 @@ struct HomeView: View {
 
     @ViewBuilder
     var body: some View {
-        switch store.state {
-        case let .bookmarks(bookmarks):
+        if store.isFetching {
+            LogoLoadingView(width: 32.0, height: 32.0)
+                .onAppear {
+                    store.send(.startFetching)
+                }
+        } else {
             ZStack(alignment: .bottomTrailing) {
                 NavigationStack {
                     ScrollView {
-                        ForEach(bookmarks) { bookmark in
+                        ForEach(store.bookmarks) { bookmark in
                             BookmarkListItem(bookmark: bookmark)
                         }
                         .navigationDestination(for: Bookmark.self) { bookmark in
@@ -33,18 +37,12 @@ struct HomeView: View {
                 }
                 .padding()
             }
-
-        case .fetching:
-            LogoLoadingView(width: 32.0, height: 32.0)
-                .onAppear {
-                    store.send(.startFetching)
-                }
         }
     }
 }
 
 #Preview {
     HomeView(
-        store: Store(initialState: .fetching) {}
+        store: Store(initialState: .init()) {}
     )
 }

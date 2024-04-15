@@ -5,9 +5,9 @@ import SwiftUI
 @Reducer
 struct HomeFeature {
     @ObservableState
-    enum State: Equatable {
-        case fetching
-        case bookmarks([Bookmark])
+    struct State: Equatable {
+        var isFetching = true
+        var bookmarks: [Bookmark] = []
     }
 
     enum Action: BindableAction {
@@ -26,13 +26,15 @@ struct HomeFeature {
                 return .none
 
             case .startFetching:
+                state.isFetching = true
                 return .run { send in
                     let bookmarks = try await labAPIClient.fetchBookmarks()
                     await send(.completeFetching(bookmarks))
                 }
 
             case let .completeFetching(bookmarks):
-                state = .bookmarks(bookmarks)
+                state.isFetching = false
+                state.bookmarks = bookmarks
                 return .none
             }
         }

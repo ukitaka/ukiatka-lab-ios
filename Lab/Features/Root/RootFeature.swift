@@ -40,11 +40,11 @@ struct RootFeature: Reducer {
                 return .none
 
             case .startHomeFlow:
-                state = .home(.fetching)
+                state = .home(.init())
                 return .none
 
             case .login(.loginCompleted):
-                state = .home(.fetching)
+                state = .home(.init())
                 return .none
 
             case .login:
