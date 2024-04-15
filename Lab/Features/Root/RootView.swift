@@ -9,7 +9,7 @@ struct RootView: View {
         switch store.state {
         case .loading:
             VStack {
-                LogoLoadingView()
+                LogoLoadingView(width: 32.0, height: 32.0)
             }.onAppear {
                 store.send(.onAppear)
             }
