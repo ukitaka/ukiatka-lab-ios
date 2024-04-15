@@ -15,6 +15,20 @@ actor LabAPIClient: Sendable {
         return try JSONDecoder().decode([Bookmark].self, from: data)
     }
 
+    func addBookmark(urlString: String) async throws {
+        struct JSONBody: Encodable {
+            let url: String
+        }
+        var req = try await urlRequestWithAuthHeader(path: "/api/bookmarks")
+        req.httpMethod = "POST"
+        let jsonData = try JSONEncoder().encode(JSONBody(url: urlString))
+
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = jsonData
+
+        _ = try await URLSession.shared.data(for: req)
+    }
+
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
         let accessToken = try await loginSessionClient.accessToken()
         var urlComponents = URLComponents(string: baseURL)!

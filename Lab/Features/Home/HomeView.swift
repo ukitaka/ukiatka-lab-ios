@@ -38,7 +38,7 @@ struct HomeView: View {
                         .shadow(radius: 12.0)
                 }
                 .padding()
-                .sheet(item: $store.scope(state: \.addBookmark, action: \.addBookmark)) { store in
+                .fullScreenCover(item: $store.scope(state: \.addBookmark, action: \.addBookmark)) { store in
                     AddBookmarkView(store: store)
                 }
             }
