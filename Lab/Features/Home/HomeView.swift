@@ -24,7 +24,9 @@ struct HomeView: View {
                         }
                     }.navigationTitle("Bookmarks")
                 }
-                Button {} label: {
+                Button {
+                    store.send(.addButtonTapped)
+                } label: {
                     Text("+")
                         .font(.title)
                         .fontWeight(.heavy)
@@ -36,6 +38,9 @@ struct HomeView: View {
                         .shadow(radius: 12.0)
                 }
                 .padding()
+                .sheet(item: $store.scope(state: \.addBookmark, action: \.addBookmark)) { store in
+                    AddBookmarkView(store: store)
+                }
             }
         }
     }
