@@ -8,6 +8,10 @@ actor LabAPIClient: Sendable {
         self.baseURL = baseURL
     }
 
+    struct APIError: Error, Decodable {
+        let error: String
+    }
+
     @Dependency(\.loginSessionClient) private var loginSessionClient
 
     func fetchBookmarks() async throws -> [Bookmark] {
@@ -15,7 +19,11 @@ actor LabAPIClient: Sendable {
         return try JSONDecoder().decode([Bookmark].self, from: data)
     }
 
-    func addBookmark(urlString: String) async throws {
+    func addBookmark(urlString: String) async throws -> Bookmark {
+        guard let url = URL(string: urlString, encodingInvalidCharacters: false) else {
+            throw APIError(error: "url format is invalid.")
+        }
+
         struct JSONBody: Encodable {
             let url: String
         }
@@ -28,10 +36,18 @@ actor LabAPIClient: Sendable {
 
         let (data, res) = try await URLSession.shared.data(for: req)
 
-        if let res = res as? HTTPURLResponse {
+        if let res = res as? HTTPURLResponse, res.statusCode != 200 {
             print(res.statusCode)
             print(String(data: data, encoding: .utf8) ?? "")
+            print(url)
+            if let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
+                throw apiError
+            } else {
+                throw APIError(error: "unexpected error. HTTP　status: \(res.statusCode), url: \(urlString)")
+            }
         }
+
+        return try JSONDecoder().decode(Bookmark.self, from: data)
     }
 
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
