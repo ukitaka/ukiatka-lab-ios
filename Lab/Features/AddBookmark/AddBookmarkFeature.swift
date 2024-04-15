@@ -53,6 +53,7 @@ struct AddBookmarkFeature {
                 }
 
             case let .submitCompleted(.failure(error)):
+                state.isSubmitting = false
                 if let error = error as? LabAPIClient.APIError {
                     state.alert = .error(message: error.error)
                 } else {

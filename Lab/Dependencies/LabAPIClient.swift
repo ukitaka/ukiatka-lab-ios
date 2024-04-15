@@ -36,7 +36,7 @@ actor LabAPIClient: Sendable {
 
         let (data, res) = try await URLSession.shared.data(for: req)
 
-        if let res = res as? HTTPURLResponse, res.statusCode != 200 {
+        if let res = res as? HTTPURLResponse, res.statusCode != 201 {
             print(res.statusCode)
             print(String(data: data, encoding: .utf8) ?? "")
             print(url)
