@@ -20,13 +20,22 @@ struct AddBookmarkView: View {
                     Button("追加") {
                         store.send(.addButtonTapped)
                     }
+                    .frame(width: 80.0, height: 32.0)
+                    .background(Color.gray)
+                    .foregroundColor(Color.white)
+                    .cornerRadius(16.0)
                     .fontWeight(.semibold)
                 }
-                TextField("URL", text: $store.urlString)
-                    .focused($focus)
-                    .onAppear {
-                        focus = true
-                    }
+                HStack {
+                    Image("Icon")
+                        .resizable()
+                        .frame(width: 16.0, height: 16.0)
+                    TextField("URL", text: $store.urlString)
+                        .focused($focus)
+                        .onAppear {
+                            focus = true
+                        }
+                }
                 Spacer()
             }.padding()
             if store.isSubmitting {
