@@ -75,6 +75,7 @@
 		E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lab.entitlements; sourceTree = "<group>"; };
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E87D17202BCB6F07004F28E4 /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -159,6 +160,7 @@
 		E83A3BB22BC3E4F300248AF5 = {
 			isa = PBXGroup;
 			children = (
+				E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */,
 				E83A3BBD2BC3E4F300248AF5 /* Lab */,
 				E800AC892BC7C48600BED4F0 /* Extensions */,
 				E83A3BBC2BC3E4F300248AF5 /* Products */,
@@ -470,6 +472,7 @@
 		E80F8F582BC7999900D65531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
@@ -497,6 +500,7 @@
 		E80F8F592BC7999900D65531 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
