@@ -21,7 +21,7 @@ struct AddBookmarkView: View {
                         store.send(.addButtonTapped)
                     }
                     .frame(width: 80.0, height: 32.0)
-                    .background(Color.gray)
+                    .background(Color.labPrimary)
                     .foregroundColor(Color.white)
                     .cornerRadius(16.0)
                     .fontWeight(.semibold)
