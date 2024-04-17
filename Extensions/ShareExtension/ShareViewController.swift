@@ -27,11 +27,16 @@ class ShareViewController: UIViewController {
                 return self.close()
             }
 
-            // do something
-            print(url)
-
-            self.extensionContext?.completeRequest(returningItems: []) { _ in }
+            Task {
+                try await self.addBookmark(url: url)
+                self.extensionContext?.completeRequest(returningItems: []) { _ in }
+            }
         }
+    }
+
+    func addBookmark(url _: URL) async throws {
+        let isLoggedIn = await loginSessionClient.isLoggedIn()
+        print(isLoggedIn)
     }
 
     func close() {
