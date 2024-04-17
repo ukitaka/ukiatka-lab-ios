@@ -18,6 +18,11 @@
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
+		E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */; };
+		E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
+		E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
+		E84346B22BCF77E0008F1FE3 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E84346B12BCF77E0008F1FE3 /* ComposableArchitecture */; };
+		E84346B42BCF77E6008F1FE3 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E84346B32BCF77E6008F1FE3 /* Supabase */; };
 		E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E873D96F2BC8027300DAF86E /* LoginFeature.swift */; };
 		E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E873D9722BC8028900DAF86E /* ComposableArchitecture */; };
 		E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17202BCB6F07004F28E4 /* HomeFeature.swift */; };
@@ -86,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84346B42BCF77E6008F1FE3 /* Supabase in Frameworks */,
+				E84346B22BCF77E0008F1FE3 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +275,10 @@
 			dependencies = (
 			);
 			name = ShareExtension;
+			packageProductDependencies = (
+				E84346B12BCF77E0008F1FE3 /* ComposableArchitecture */,
+				E84346B32BCF77E6008F1FE3 /* Supabase */,
+			);
 			productName = ShareExtension;
 			productReference = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -406,7 +417,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */,
+				E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */,
 				E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */,
+				E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +781,16 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		E80F8F612BC7A41F00D65531 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		E84346B12BCF77E0008F1FE3 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		E84346B32BCF77E6008F1FE3 /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;

@@ -1,8 +1,12 @@
+import Auth
+import Dependencies
 import Social
 import UIKit
 import UniformTypeIdentifiers
 
 class ShareViewController: UIViewController {
+    @Dependency(\.loginSessionClient) var loginSessionClient
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,21 +26,12 @@ class ShareViewController: UIViewController {
             guard let url = item as? URL else {
                 return self.close()
             }
-            var uc = URLComponents()
-            uc.scheme = "app.ukitaka-lab"
-            uc.host = "ukitaka-lab"
-            uc.path = "/add_bookmarks"
-            uc.queryItems = [URLQueryItem(name: "url", value: url.absoluteString)]
-            print(uc.url)
 
-            DispatchQueue.main.async {
-                self.extensionContext?.completeRequest(returningItems: []) { _ in
-                    self.extensionContext?.open(uc.url!)
-                }
-            }
+            // do something
+            print(url)
+
+            self.extensionContext?.completeRequest(returningItems: []) { _ in }
         }
-
-        // extensionContext.cancelRequest(withError: error)
     }
 
     func close() {
