@@ -6,6 +6,7 @@ import UniformTypeIdentifiers
 
 class ShareViewController: UIViewController {
     @Dependency(\.loginSessionClient) var loginSessionClient
+    @Dependency(\.labAPIClient) var labAPIClient
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +35,9 @@ class ShareViewController: UIViewController {
         }
     }
 
-    func addBookmark(url _: URL) async throws {
+    func addBookmark(url: URL) async throws {
         let isLoggedIn = await loginSessionClient.isLoggedIn()
-        print(isLoggedIn)
+        let bookmark = try await labAPIClient.addBookmark(urlString: url.absoluteString)
     }
 
     func close() {
