@@ -17,7 +17,11 @@ struct HomeView: View {
                 NavigationStack {
                     ScrollView {
                         ForEach(store.bookmarks) { bookmark in
-                            BookmarkListItem(bookmark: bookmark)
+                            NavigationLink {
+                                WebView(url: URL(string: bookmark.url)!)
+                            } label: {
+                                BookmarkListItem(bookmark: bookmark)
+                            }
                         }
                         .navigationDestination(for: Bookmark.self) { bookmark in
                             Text(bookmark.title)
