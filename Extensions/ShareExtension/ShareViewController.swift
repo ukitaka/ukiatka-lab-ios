@@ -12,16 +12,6 @@ class ShareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let shareView = UIHostingController(rootView: ShareView())
-        addChild(shareView)
-        view.addSubview(shareView.view)
-
-        shareView.view.translatesAutoresizingMaskIntoConstraints = false
-        shareView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        shareView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        shareView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        shareView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-
         guard let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem else {
             return close()
         }
@@ -35,20 +25,29 @@ class ShareViewController: UIViewController {
         }
 
         itemProvider.loadItem(forTypeIdentifier: UTType.url.identifier, options: nil) { item, _ in
-            guard let url = item as? URL else {
-                return self.close()
-            }
+            DispatchQueue.main.async {
+                guard let url = item as? URL else {
+                    return self.close()
+                }
 
-            Task {
-                try await self.addBookmark(url: url)
-                self.extensionContext?.completeRequest(returningItems: []) { _ in }
+                let shareView = ShareView(store: .init(initialState: .adding, reducer: { [weak self] in
+                    ShareFeature(url: url) {
+                        DispatchQueue.main.async {
+                            self?.close()
+                        }
+                    }
+                }))
+
+                let hostingViewController = UIHostingController(rootView: shareView)
+                self.addChild(hostingViewController)
+                self.view.addSubview(hostingViewController.view)
+                hostingViewController.view.translatesAutoresizingMaskIntoConstraints = false
+                hostingViewController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+                hostingViewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+                hostingViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+                hostingViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
             }
         }
-    }
-
-    func addBookmark(url: URL) async throws {
-        let isLoggedIn = await loginSessionClient.isLoggedIn()
-        let bookmark = try await labAPIClient.addBookmark(urlString: url.absoluteString)
     }
 
     func close() {
