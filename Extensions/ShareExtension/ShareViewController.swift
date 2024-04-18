@@ -1,6 +1,7 @@
 import Auth
 import Dependencies
 import Social
+import SwiftUI
 import UIKit
 import UniformTypeIdentifiers
 
@@ -10,6 +11,16 @@ class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let shareView = UIHostingController(rootView: ShareView())
+        addChild(shareView)
+        view.addSubview(shareView.view)
+
+        shareView.view.translatesAutoresizingMaskIntoConstraints = false
+        shareView.view.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        shareView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        shareView.view.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        shareView.view.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 
         guard let extensionItem = extensionContext?.inputItems.first as? NSExtensionItem else {
             return close()
