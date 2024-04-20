@@ -47,7 +47,7 @@ struct ShareFeature {
                 }
 
             case .close:
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.4) {
                     onCompleted()
                 }
                 return .none
