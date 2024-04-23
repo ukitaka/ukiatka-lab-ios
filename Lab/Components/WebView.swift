@@ -1,15 +1,13 @@
+import Foundation
+import SafariServices
 import SwiftUI
-import WebKit
 
-struct WebView: UIViewRepresentable {
+struct SafariWebView: UIViewControllerRepresentable {
     let url: URL
 
-    func makeUIView(context _: Context) -> WKWebView {
-        WKWebView()
+    func makeUIViewController(context _: Context) -> SFSafariViewController {
+        SFSafariViewController(url: url)
     }
 
-    func updateUIView(_ uiView: WKWebView, context _: Context) {
-        let request = URLRequest(url: url)
-        uiView.load(request)
-    }
+    func updateUIViewController(_: SFSafariViewController, context _: Context) {}
 }

@@ -18,7 +18,7 @@ struct HomeView: View {
                     ScrollView {
                         ForEach(store.bookmarks) { bookmark in
                             NavigationLink {
-                                WebView(url: URL(string: bookmark.url)!)
+                                SafariWebView(url: URL(string: bookmark.url)!)
                             } label: {
                                 BookmarkListItem(bookmark: bookmark)
                             }
