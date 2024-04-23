@@ -23,6 +23,8 @@
 		E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */; };
 		E83A3BC32BC3E4F400248AF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */; };
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
+		E8404FC72BD7904E00163CBE /* BookmarkDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */; };
+		E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */; };
 		E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */; };
 		E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
 		E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
@@ -83,6 +85,8 @@
 		E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lab.entitlements; sourceTree = "<group>"; };
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailFeature.swift; sourceTree = "<group>"; };
+		E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailView.swift; sourceTree = "<group>"; };
 		E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E87D17202BCB6F07004F28E4 /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		E81865D12BC8E50900411BC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E8404FC62BD7904E00163CBE /* BookmarkDetail */,
 				E8C05FF02BCCB41400BA2361 /* AddBookmark */,
 				E87D17222BCB6F07004F28E4 /* Home */,
 				E8FF5AF82BC7FF6D0049A49F /* Login */,
@@ -207,6 +212,15 @@
 				E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E8404FC62BD7904E00163CBE /* BookmarkDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */,
+				E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */,
+			);
+			path = BookmarkDetail;
 			sourceTree = "<group>";
 		};
 		E873D9712BC8028900DAF86E /* Frameworks */ = {
@@ -445,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */,
 				E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */,
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
 				E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */,
@@ -456,6 +471,7 @@
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
 				E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */,
+				E8404FC72BD7904E00163CBE /* BookmarkDetailFeature.swift in Sources */,
 				E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */,
 				E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */,
 				E8C05FEB2BCC10C200BA2361 /* BookmarkListItem.swift in Sources */,
