@@ -36,6 +36,9 @@ struct BookmarkListItem: View {
                     image.resizable()
                         .frame(maxWidth: .infinity)
                         .scaledToFit()
+                        .cornerRadius(16.0)
+                        .clipped()
+                        .shadow(radius: 1.0)
                 } placeholder: {
                     Skeleton()
                         .frame(minHeight: 200)
