@@ -21,7 +21,7 @@ struct HomeView: View {
                                 BookmarkDetailView(store: .init(initialState: .init(bookmark: bookmark), reducer: {
                                     BookmarkDetailFeature()
                                 }))
-                                .navigationBarHidden(true)
+                                .navigationBarTitleDisplayMode(.inline)
                             } label: {
                                 BookmarkListItem(bookmark: bookmark)
                             }
