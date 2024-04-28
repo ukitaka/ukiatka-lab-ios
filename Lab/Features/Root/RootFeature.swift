@@ -6,7 +6,7 @@ import SwiftUI
 @Reducer
 struct RootFeature: Reducer {
     @ObservableState
-    enum State: Equatable {
+    enum State {
         case loading
         case login(LoginFeature.State)
         case home(HomeFeature.State)

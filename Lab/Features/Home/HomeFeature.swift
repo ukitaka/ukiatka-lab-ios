@@ -5,30 +5,30 @@ import SwiftUI
 @Reducer
 struct HomeFeature {
     @ObservableState
-    struct State: Equatable {
+    struct State {
         var isFetching = true
         var bookmarks: [Bookmark] = []
-        @Presents var addBookmark: AddBookmarkFeature.State?
-        @Presents var bookmarkDetail: BookmarkDetailFeature.State?
+        @Presents var destination: Destination.State?
     }
 
-    enum Action: BindableAction {
+    enum Action {
         case startFetching
         case completeFetching([Bookmark])
         case addButtonTapped
-        case addBookmark(PresentationAction<AddBookmarkFeature.Action>)
-        case binding(BindingAction<State>)
+        case destination(PresentationAction<Destination.Action>)
+    }
+
+    @Reducer
+    enum Destination {
+        case addBookmark(AddBookmarkFeature)
+        case bookmarkDetail(BookmarkDetailFeature)
     }
 
     @Dependency(\.labAPIClient) private var labAPIClient
 
     var body: some ReducerOf<Self> {
-        BindingReducer()
         Reduce { state, action in
             switch action {
-            case .binding:
-                return .none
-
             case .startFetching:
                 state.isFetching = true
                 return .run { send in
@@ -42,15 +42,13 @@ struct HomeFeature {
                 return .none
 
             case .addButtonTapped:
-                state.addBookmark = AddBookmarkFeature.State()
+                state.destination = .addBookmark(AddBookmarkFeature.State())
                 return .none
 
-            case .addBookmark:
-                return .none // delegate to AddBookmarkFeature
+            case .destination:
+                return .none
             }
         }
-        .ifLet(\.$addBookmark, action: \.addBookmark) {
-            AddBookmarkFeature()
-        }
+        .ifLet(\.$destination, action: \.destination)
     }
 }
