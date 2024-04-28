@@ -9,6 +9,7 @@ struct HomeFeature {
         var isFetching = true
         var bookmarks: [Bookmark] = []
         @Presents var addBookmark: AddBookmarkFeature.State?
+        @Presents var bookmarkDetail: BookmarkDetailFeature.State?
     }
 
     enum Action: BindableAction {

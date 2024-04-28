@@ -4,25 +4,13 @@ import SwiftUI
 @Reducer
 struct BookmarkDetailFeature {
     @ObservableState
-    struct State {
-        enum Status {
-            case initial
-        }
+    struct State: Equatable {}
 
-        var status: Status = .initial
-    }
-
-    enum Action: BindableAction {
-        case binding(BindingAction<State>)
-    }
+    enum Action {}
 
     var body: some ReducerOf<Self> {
-        BindingReducer()
-        Reduce { _, action in
-            switch action {
-            case .binding:
-                .none
-            }
+        Reduce { _, _ in
+            .none
         }
     }
 }

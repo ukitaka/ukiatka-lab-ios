@@ -15,7 +15,7 @@ actor LabAPIClient: Sendable {
     @Dependency(\.loginSessionClient) private var loginSessionClient
 
     func fetchBookmarks() async throws -> [Bookmark] {
-        let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/api/bookmarks"))
+        let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/bookmarks"))
         return try JSONDecoder().decode([Bookmark].self, from: data)
     }
 
@@ -27,7 +27,7 @@ actor LabAPIClient: Sendable {
         struct JSONBody: Encodable {
             let url: String
         }
-        var req = try await urlRequestWithAuthHeader(path: "/api/bookmarks")
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks")
         req.httpMethod = "POST"
         let jsonData = try JSONEncoder().encode(JSONBody(url: urlString))
 
@@ -62,7 +62,7 @@ actor LabAPIClient: Sendable {
 }
 
 enum LabAPIClientKey: DependencyKey {
-    static let liveValue: LabAPIClient = .init(baseURL: "https://ukitaka-lab.app")
+    static let liveValue: LabAPIClient = .init(baseURL: "https://api.ukitaka-lab.app")
 }
 
 extension DependencyValues {
