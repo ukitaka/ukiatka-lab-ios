@@ -18,13 +18,13 @@ struct HomeView: View {
                     ScrollView {
                         ForEach(store.bookmarks) { bookmark in
                             NavigationLink {
-                                SafariWebView(url: URL(string: bookmark.url)!)
+                                BookmarkDetailView(store: .init(initialState: .init(bookmark: bookmark), reducer: {
+                                    BookmarkDetailFeature()
+                                }))
+                                .navigationBarHidden(true)
                             } label: {
                                 BookmarkListItem(bookmark: bookmark)
                             }
-                        }
-                        .navigationDestination(for: Bookmark.self) { bookmark in
-                            Text(bookmark.title)
                         }
                     }.navigationTitle("Bookmarks")
                 }

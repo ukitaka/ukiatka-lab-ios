@@ -6,12 +6,15 @@ struct BookmarkDetailView: View {
 
     @ViewBuilder
     var body: some View {
-        Text("hello")
+        ScrollView {
+            VStack(alignment: .leading) {
+                HStack(alignment: .top) {
+                    Text(store.bookmark.title)
+                    Spacer()
+                }
+                Spacer()
+            }
+            .padding()
+        }
     }
-}
-
-#Preview {
-    BookmarkDetailView(
-        store: Store(initialState: BookmarkDetailFeature.State()) {}
-    )
 }
