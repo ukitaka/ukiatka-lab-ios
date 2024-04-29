@@ -4,6 +4,8 @@ import SwiftUI
 struct BookmarkDetailView: View {
     @Bindable var store: StoreOf<BookmarkDetailFeature>
 
+    @State private var opacity: CGFloat = 0.0
+
     @Dependency(\.dateFormatter) var dateFormatter
 
     @ViewBuilder
@@ -16,6 +18,12 @@ struct BookmarkDetailView: View {
                 siteNameAndTitle().padding(.bottom, 8.0)
                 Divider()
                 llmSummarySection().padding(4.0)
+                    .opacity(opacity)
+                    .onAppear {
+                        withAnimation(.easeInOut(duration: 0.8)) {
+                            opacity = 1.0
+                        }
+                    }
                 Divider()
                 Spacer()
             }
