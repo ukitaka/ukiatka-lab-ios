@@ -8,6 +8,7 @@ struct HomeFeature {
     struct State {
         var isFetching = true
         var bookmarks: [Bookmark] = []
+        var path = StackState<Path.State>()
         @Presents var destination: Destination.State?
     }
 
@@ -15,13 +16,18 @@ struct HomeFeature {
         case startFetching
         case completeFetching([Bookmark])
         case addButtonTapped
+        case path(StackActionOf<Path>)
         case destination(PresentationAction<Destination.Action>)
+    }
+
+    @Reducer
+    enum Path {
+        case bookmarkDetail(BookmarkDetailFeature)
     }
 
     @Reducer
     enum Destination {
         case addBookmark(AddBookmarkFeature)
-        case bookmarkDetail(BookmarkDetailFeature)
     }
 
     @Dependency(\.labAPIClient) private var labAPIClient
@@ -47,8 +53,12 @@ struct HomeFeature {
 
             case .destination:
                 return .none
+
+            case .path:
+                return .none
             }
         }
         .ifLet(\.$destination, action: \.destination)
+        .forEach(\.path, action: \.path)
     }
 }

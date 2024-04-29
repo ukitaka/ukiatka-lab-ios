@@ -13,14 +13,19 @@ struct HomeView: View {
                     store.send(.startFetching)
                 }
         } else {
+            mainView()
+        }
+    }
+
+    func mainView() -> some View {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
             ZStack(alignment: .bottomTrailing) {
-                NavigationStack {
-                    ScrollView {
-                        ForEach(store.bookmarks) { bookmark in
+                ScrollView {
+                    ForEach(store.bookmarks) { bookmark in
+                        NavigationLink(state: HomeFeature.Path.State.bookmarkDetail(.init(bookmark: bookmark))) {
                             BookmarkListItem(bookmark: bookmark)
                         }
                     }
-                    .navigationTitle("Bookmarks")
                 }
                 Button {
                     store.send(.addButtonTapped)
@@ -37,12 +42,16 @@ struct HomeView: View {
                 }
                 .padding()
             }
-            .navigationDestination(item: $store.scope(state: \.destination?.bookmarkDetail, action: \.destination.bookmarkDetail)) { store in
+            .navigationTitle("Bookmarks")
+        } destination: { store in
+            switch store.case {
+            case let .bookmarkDetail(store):
                 BookmarkDetailView(store: store)
+                    .navigationBarTitleDisplayMode(.inline)
             }
-            .fullScreenCover(item: $store.scope(state: \.destination?.addBookmark, action: \.destination.addBookmark)) { store in
-                AddBookmarkView(store: store)
-            }
+        }
+        .fullScreenCover(item: $store.scope(state: \.destination?.addBookmark, action: \.destination.addBookmark)) { store in
+            AddBookmarkView(store: store)
         }
     }
 }

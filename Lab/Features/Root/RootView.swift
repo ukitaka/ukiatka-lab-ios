@@ -23,11 +23,3 @@ struct RootView: View {
         }
     }
 }
-
-#Preview {
-    RootView(
-        store: Store(initialState: .loading) {
-            RootFeature()
-        }
-    )
-}
