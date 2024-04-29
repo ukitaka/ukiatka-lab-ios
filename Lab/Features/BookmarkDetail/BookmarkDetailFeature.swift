@@ -16,14 +16,11 @@ struct BookmarkDetailFeature {
     }
 
     enum Action {
-        case refetchBookmarkDetail
-        case updateBookmark(Bookmark)
+        case fetchBookmarkDetail(APIRequestAction<Bookmark>)
         case requestLLMSummary
         case gearButtonTapped
         case openURL(URL)
-        case deleteButtonTapped
-        case delete
-        case doneDelete
+        case deleteBookmark(DialogAction)
         case destination(PresentationAction<Destination.Action>)
     }
 
@@ -33,14 +30,14 @@ struct BookmarkDetailFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .refetchBookmarkDetail:
+            case .fetchBookmarkDetail(.startFetching):
                 state.isFetching = true
                 return .run { [bookmarkID = state.bookmark.id] send in
                     let bookmark = try await labAPIClient.fetchBookmark(id: bookmarkID)
-                    await send(.updateBookmark(bookmark))
+                    await send(.fetchBookmarkDetail(.completed(bookmark)))
                 }
 
-            case let .updateBookmark(bookmark):
+            case let .fetchBookmarkDetail(.completed(bookmark)):
                 state.isFetching = false
                 state.bookmark = bookmark
                 return .none
@@ -49,7 +46,7 @@ struct BookmarkDetailFeature {
                 state.isFetching = true
                 return .run { [bookmarkID = state.bookmark.id] send in
                     try await labAPIClient.enqueueLLMSummary(id: bookmarkID)
-                    await send(.refetchBookmarkDetail)
+                    await send(.fetchBookmarkDetail(.startFetching))
                 }
 
             case let .openURL(url):
@@ -64,19 +61,23 @@ struct BookmarkDetailFeature {
                 state.destination = .bookmarkAction
                 return .none
 
-            case .deleteButtonTapped:
+            case .deleteBookmark(.confirmation):
                 state.destination = .deleteConfirm
                 return .none
 
-            case .delete:
+            case .deleteBookmark(.executeAction):
                 state.isFetching = true
                 return .run { [bookmarkID = state.bookmark.id] send in
                     try await labAPIClient.deleteBookmark(id: bookmarkID)
-                    await send(.doneDelete)
+                    await send(.deleteBookmark(.completed))
                 }
 
-            case .doneDelete:
+            case .deleteBookmark(.completed):
                 state.isFetching = false
+                return .none
+
+            case let .fetchBookmarkDetail(.error(error)):
+                print(error) // TODO: Error handling
                 return .none
             }
         }

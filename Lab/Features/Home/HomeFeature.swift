@@ -54,7 +54,7 @@ struct HomeFeature {
                 state.destination = .addBookmark(AddBookmarkFeature.State())
                 return .none
 
-            case .path(.element(id: _, action: .bookmarkDetail(.doneDelete))):
+            case .path(.element(id: _, action: .bookmarkDetail(.deleteBookmark(.completed)))):
                 _ = state.path.popLast()
                 return .run { send in
                     await send(.fetchBookmarks(.startFetching)) // reload

@@ -34,13 +34,13 @@ struct BookmarkDetailView: View {
             }))
         }
         .onAppear {
-            store.send(.refetchBookmarkDetail)
+            store.send(.fetchBookmarkDetail(.startFetching))
         }
         .confirmationDialog(item: $store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
             Text("ブックマークを管理")
         } actions: { _ in
             Button(role: .destructive) {
-                store.send(.deleteButtonTapped)
+                store.send(.deleteBookmark(.confirmation))
             } label: {
                 Text("ブックマークを削除")
             }
@@ -51,7 +51,7 @@ struct BookmarkDetailView: View {
             Text("ブックマークを削除")
         } actions: { _ in
             Button(role: .destructive) {
-                store.send(.delete)
+                store.send(.deleteBookmark(.executeAction))
             } label: {
                 Text("削除する")
             }
