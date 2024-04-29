@@ -4,11 +4,7 @@ import SwiftUI
 struct BookmarkDetailView: View {
     @Bindable var store: StoreOf<BookmarkDetailFeature>
 
-    let dateFormatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "yyyy-MM-dd"
-        return df
-    }()
+    @Dependency(\.dateFormatter) var dateFormatter
 
     @ViewBuilder
     var body: some View {

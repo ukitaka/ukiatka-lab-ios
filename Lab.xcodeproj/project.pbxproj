@@ -37,6 +37,7 @@
 		E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
 		E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
 		E8A873762BDF90BC001B0E7F /* LabStyleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A873752BDF90BC001B0E7F /* LabStyleButton.swift */; };
+		E8A873782BDFA836001B0E7F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A873772BDFA836001B0E7F /* DateFormatter.swift */; };
 		E8BA5C7C2BDF45F700F84852 /* BookmarkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BA5C7B2BDF45F700F84852 /* BookmarkImage.swift */; };
 		E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FE62BCBC70200BA2361 /* Skeleton.swift */; };
 		E8C05FE92BCBCA8B00BA2361 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = E8C05FE82BCBCA8B00BA2361 /* Shimmer */; };
@@ -96,6 +97,7 @@
 		E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabAPIClient.swift; sourceTree = "<group>"; };
 		E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
 		E8A873752BDF90BC001B0E7F /* LabStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabStyleButton.swift; sourceTree = "<group>"; };
+		E8A873772BDFA836001B0E7F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E8BA5C7B2BDF45F700F84852 /* BookmarkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkImage.swift; sourceTree = "<group>"; };
 		E8C05FE62BCBC70200BA2361 /* Skeleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skeleton.swift; sourceTree = "<group>"; };
 		E8C05FEA2BCC10C200BA2361 /* BookmarkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListItem.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */,
 				E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */,
+				E8A873772BDFA836001B0E7F /* DateFormatter.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */,
 				E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */,
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
+				E8A873782BDFA836001B0E7F /* DateFormatter.swift in Sources */,
 				E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */,
 				E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */,
 				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
