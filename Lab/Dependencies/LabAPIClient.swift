@@ -22,6 +22,11 @@ actor LabAPIClient: Sendable {
         return try jsonDecoder.decode([Bookmark].self, from: data)
     }
 
+    func fetchBookmark(id: Int) async throws -> Bookmark {
+        let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/bookmarks/\(id)"))
+        return try jsonDecoder.decode(Bookmark.self, from: data)
+    }
+
     func addBookmark(urlString: String) async throws -> Bookmark {
         guard let url = URL(string: urlString, encodingInvalidCharacters: false) else {
             throw APIError(error: "url format is invalid.")
