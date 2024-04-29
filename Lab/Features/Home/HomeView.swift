@@ -17,16 +17,10 @@ struct HomeView: View {
                 NavigationStack {
                     ScrollView {
                         ForEach(store.bookmarks) { bookmark in
-                            NavigationLink {
-                                BookmarkDetailView(store: .init(initialState: .init(bookmark: bookmark), reducer: {
-                                    BookmarkDetailFeature()
-                                }))
-                                .navigationBarTitleDisplayMode(.inline)
-                            } label: {
-                                BookmarkListItem(bookmark: bookmark)
-                            }
+                            BookmarkListItem(bookmark: bookmark)
                         }
-                    }.navigationTitle("Bookmarks")
+                    }
+                    .navigationTitle("Bookmarks")
                 }
                 Button {
                     store.send(.addButtonTapped)
@@ -42,16 +36,13 @@ struct HomeView: View {
                         .shadow(radius: 12.0)
                 }
                 .padding()
-                .fullScreenCover(item: $store.scope(state: \.destination?.addBookmark, action: \.destination.addBookmark)) { store in
-                    AddBookmarkView(store: store)
-                }
+            }
+            .navigationDestination(item: $store.scope(state: \.destination?.bookmarkDetail, action: \.destination.bookmarkDetail)) { store in
+                BookmarkDetailView(store: store)
+            }
+            .fullScreenCover(item: $store.scope(state: \.destination?.addBookmark, action: \.destination.addBookmark)) { store in
+                AddBookmarkView(store: store)
             }
         }
     }
-}
-
-#Preview {
-    HomeView(
-        store: Store(initialState: .init()) {}
-    )
 }
