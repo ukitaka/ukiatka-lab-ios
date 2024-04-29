@@ -79,7 +79,7 @@ struct BookmarkDetailView: View {
             .padding()
             .navigationTitle(store.bookmark.siteNameForDisplay)
             .navigationBarItems(trailing: Button("", systemImage: "safari", action: {
-                print("safari!")
+                store.send(.openURL(URL(string: store.bookmark.url)!))
             }))
         }
         .onAppear {

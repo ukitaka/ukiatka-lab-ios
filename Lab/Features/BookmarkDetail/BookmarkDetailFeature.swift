@@ -13,8 +13,10 @@ struct BookmarkDetailFeature {
         case refetchBookmarkDetail
         case updateBookmark(Bookmark)
         case requestLLMSummary
+        case openURL(URL)
     }
 
+    @Dependency(\.openURL) private var openURL
     @Dependency(\.labAPIClient) private var labAPIClient
 
     var body: some ReducerOf<Self> {
@@ -37,6 +39,11 @@ struct BookmarkDetailFeature {
                 return .run { [bookmarkID = state.bookmark.id] send in
                     try await labAPIClient.enqueueLLMSummary(id: bookmarkID)
                     await send(.refetchBookmarkDetail)
+                }
+
+            case let .openURL(url):
+                return .run { _ in
+                    await openURL(url)
                 }
             }
         }
