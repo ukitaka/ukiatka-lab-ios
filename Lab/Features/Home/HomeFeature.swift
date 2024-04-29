@@ -52,7 +52,7 @@ struct HomeFeature {
                 return .none
 
             case .path(.element(id: _, action: .bookmarkDetail(.doneDelete))):
-                state.path.popLast()
+                _ = state.path.popLast()
                 return .none
 
             case .destination:
