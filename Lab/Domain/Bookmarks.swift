@@ -17,4 +17,10 @@ struct Bookmark: Equatable, Decodable, Hashable, Identifiable {
 
 struct LLMSummary: Equatable, Decodable, Hashable {
     let summary: String
+    let status: Status
+
+    enum Status: String, Equatable, Decodable, Hashable {
+        case queued
+        case completed
+    }
 }

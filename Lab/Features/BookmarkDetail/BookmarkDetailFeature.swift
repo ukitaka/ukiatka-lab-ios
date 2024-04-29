@@ -12,6 +12,7 @@ struct BookmarkDetailFeature {
     enum Action {
         case refetchBookmarkDetail
         case updateBookmark(Bookmark)
+        case requestLLMSummary
     }
 
     @Dependency(\.labAPIClient) private var labAPIClient
@@ -30,6 +31,13 @@ struct BookmarkDetailFeature {
                 state.isFetching = false
                 state.bookmark = bookmark
                 return .none
+
+            case .requestLLMSummary:
+                state.isFetching = true
+                return .run { [bookmarkID = state.bookmark.id] send in
+                    try await labAPIClient.enqueueLLMSummary(id: bookmarkID)
+                    await send(.refetchBookmarkDetail)
+                }
             }
         }
     }
