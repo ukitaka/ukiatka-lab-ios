@@ -7,13 +7,21 @@ struct BookmarkDetailFeature {
     struct State: Equatable {
         var isFetching = false
         var bookmark: Bookmark
+        @Presents var destination: Destination.State?
+    }
+
+    @Reducer(state: .equatable) enum Destination {
+        case bookmarkAction
+        case deleteConfirmAlert
     }
 
     enum Action {
         case refetchBookmarkDetail
         case updateBookmark(Bookmark)
         case requestLLMSummary
+        case gearButtonTapped
         case openURL(URL)
+        case destination(PresentationAction<Destination.Action>)
     }
 
     @Dependency(\.openURL) private var openURL
@@ -45,7 +53,15 @@ struct BookmarkDetailFeature {
                 return .run { _ in
                     await openURL(url)
                 }
+
+            case .destination:
+                return .none
+
+            case .gearButtonTapped:
+                state.destination = .bookmarkAction
+                return .none
             }
         }
+        .ifLet(\.$destination, action: \.destination)
     }
 }

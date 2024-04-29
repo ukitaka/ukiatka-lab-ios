@@ -13,40 +13,32 @@ struct BookmarkDetailView: View {
     @ViewBuilder
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 16.0) {
                 BookmarkImage(bookmark: store.bookmark)
-                Divider().padding([.top, .bottom], 8.0)
-                siteNameAndTitle()
-                Divider().padding([.top, .bottom], 8.0)
+                    .onTapGesture { store.send(.openURL(URL(string: store.bookmark.url)!)) }
+                Divider()
+                siteNameAndTitle().padding(.bottom, 8.0)
+                Divider()
                 llmSummarySection().padding(4.0)
-                Divider().padding([.top, .bottom], 8.0)
-                HStack(alignment: .center) {
-                    Image(systemName: "gearshape.fill")
-                        .foregroundColor(.labText)
-                    Text("ブックマーク管理")
-                        .foregroundColor(.labText)
-                        .fontWeight(.semibold)
-                }
-                .padding(.bottom, 8.0)
-                Button("ブックマークを削除", systemImage: "trash") {
-                    print("delete!")
-                }
-                .disabled(store.isFetching)
-                .frame(width: 180.0, height: 48.0)
-                .background(store.isFetching ? .gray : Color.labDanger)
-                .foregroundColor(Color.white)
-                .cornerRadius(16.0)
-                .fontWeight(.semibold)
+                Divider()
                 Spacer()
             }
             .padding()
             .navigationTitle(store.bookmark.siteNameForDisplay)
-            .navigationBarItems(trailing: Button("", systemImage: "safari", action: {
-                store.send(.openURL(URL(string: store.bookmark.url)!))
+            .navigationBarItems(trailing: Button("", systemImage: "gearshape.fill", action: {
+                store.send(.gearButtonTapped)
             }))
         }
         .onAppear {
             store.send(.refetchBookmarkDetail)
+        }
+        .confirmationDialog(item: $store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
+            Text("Title")
+        } actions: { _ in
+            Button("Action1") {}
+            Button("Action2") {}
+        } message: { _ in
+            Text("message")
         }
     }
 
@@ -71,10 +63,9 @@ struct BookmarkDetailView: View {
             if store.isFetching {
                 LogoLoadingView(width: 16.0, height: 16.0)
             }
-        }.padding(.bottom, 4.0)
+        }
         Text(store.bookmark.title)
             .font(.headline)
-            .padding(.bottom, 16.0)
     }
 
     @ViewBuilder
