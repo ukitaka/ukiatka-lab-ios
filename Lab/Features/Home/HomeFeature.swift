@@ -53,7 +53,9 @@ struct HomeFeature {
 
             case .path(.element(id: _, action: .bookmarkDetail(.doneDelete))):
                 _ = state.path.popLast()
-                return .none
+                return .run { send in
+                    await send(.startFetching) // reload
+                }
 
             case .destination:
                 return .none

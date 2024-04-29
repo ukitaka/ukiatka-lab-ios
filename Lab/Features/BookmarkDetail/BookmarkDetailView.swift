@@ -39,8 +39,10 @@ struct BookmarkDetailView: View {
         .confirmationDialog(item: $store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
             Text("ブックマークを管理")
         } actions: { _ in
-            Button("ブックマークを削除") {
+            Button(role: .destructive) {
                 store.send(.deleteButtonTapped)
+            } label: {
+                Text("ブックマークを削除")
             }
         } message: { _ in
             Text("ブックマークを管理")

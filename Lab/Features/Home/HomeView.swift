@@ -27,6 +27,15 @@ struct HomeView: View {
                         }
                     }
                 }
+                // TODO: ここをなんとかしたい
+                // isFetchingをObserveしてtrue -> falseになるまでawaitできるように
+                // 実装できると標準に乗っかれそう
+                // .refreshable {
+                // DispatchQueue.main.async {
+                // store.send(.startFetching)
+                // }
+                // store.publisher.map(\.isFetching).scan(false)
+                // }
                 Button {
                     store.send(.addButtonTapped)
                 } label: {
