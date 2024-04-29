@@ -65,7 +65,7 @@ struct BookmarkDetailView: View {
                             }
                             .disabled(store.isFetching)
                             .frame(width: 180.0, height: 48.0)
-                            .background(Color.labPrimary)
+                            .background(store.isFetching ? .gray : Color.labPrimary)
                             .foregroundColor(Color.white)
                             .cornerRadius(16.0)
                             .fontWeight(.semibold)
@@ -78,6 +78,9 @@ struct BookmarkDetailView: View {
             }
             .padding()
             .navigationTitle(store.bookmark.siteNameForDisplay)
+            .navigationBarItems(trailing: Button("", systemImage: "safari", action: {
+                print("safari!")
+            }))
         }
         .onAppear {
             store.send(.refetchBookmarkDetail)

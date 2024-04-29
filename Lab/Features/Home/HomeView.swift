@@ -50,6 +50,7 @@ struct HomeView: View {
                     .navigationBarTitleDisplayMode(.inline)
             }
         }
+        .tint(.labTint)
         .fullScreenCover(item: $store.scope(state: \.destination?.addBookmark, action: \.destination.addBookmark)) { store in
             AddBookmarkView(store: store)
         }
