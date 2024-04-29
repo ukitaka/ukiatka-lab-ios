@@ -51,6 +51,10 @@ struct HomeFeature {
                 state.destination = .addBookmark(AddBookmarkFeature.State())
                 return .none
 
+            case .path(.element(id: _, action: .bookmarkDetail(.doneDelete))):
+                state.path.popLast()
+                return .none
+
             case .destination:
                 return .none
 

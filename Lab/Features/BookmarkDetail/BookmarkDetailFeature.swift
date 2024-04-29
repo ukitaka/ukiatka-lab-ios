@@ -12,7 +12,7 @@ struct BookmarkDetailFeature {
 
     @Reducer(state: .equatable) enum Destination {
         case bookmarkAction
-        case deleteConfirmAlert
+        case deleteConfirm
     }
 
     enum Action {
@@ -21,6 +21,9 @@ struct BookmarkDetailFeature {
         case requestLLMSummary
         case gearButtonTapped
         case openURL(URL)
+        case deleteButtonTapped
+        case delete
+        case doneDelete
         case destination(PresentationAction<Destination.Action>)
     }
 
@@ -59,6 +62,21 @@ struct BookmarkDetailFeature {
 
             case .gearButtonTapped:
                 state.destination = .bookmarkAction
+                return .none
+
+            case .deleteButtonTapped:
+                state.destination = .deleteConfirm
+                return .none
+
+            case .delete:
+                state.isFetching = true
+                return .run { [bookmarkID = state.bookmark.id] send in
+                    try await labAPIClient.deleteBookmark(id: bookmarkID)
+                    await send(.doneDelete)
+                }
+
+            case .doneDelete:
+                state.isFetching = false
                 return .none
             }
         }

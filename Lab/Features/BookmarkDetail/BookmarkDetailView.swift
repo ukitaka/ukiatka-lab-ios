@@ -37,12 +37,24 @@ struct BookmarkDetailView: View {
             store.send(.refetchBookmarkDetail)
         }
         .confirmationDialog(item: $store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
-            Text("Title")
+            Text("ブックマークを管理")
         } actions: { _ in
-            Button("Action1") {}
-            Button("Action2") {}
+            Button("ブックマークを削除") {
+                store.send(.deleteButtonTapped)
+            }
         } message: { _ in
-            Text("message")
+            Text("ブックマークを管理")
+        }
+        .alert(item: $store.scope(state: \.destination?.deleteConfirm, action: \.destination.deleteConfirm)) { _ in
+            Text("ブックマークを削除")
+        } actions: { _ in
+            Button(role: .destructive) {
+                store.send(.delete)
+            } label: {
+                Text("削除する")
+            }
+        } message: { _ in
+            Text("このブックマークを削除しますか？")
         }
     }
 

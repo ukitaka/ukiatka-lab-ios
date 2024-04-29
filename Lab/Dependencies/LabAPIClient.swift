@@ -27,6 +27,14 @@ actor LabAPIClient: Sendable {
         return try jsonDecoder.decode(Bookmark.self, from: data)
     }
 
+    func deleteBookmark(id: Int) async throws {
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(id)")
+        req.httpMethod = "DELETE"
+        let (data, _) = try await URLSession.shared.data(for: req)
+        // TODO: error handling
+        print(String(data: data, encoding: .utf8) ?? "no data")
+    }
+
     func enqueueLLMSummary(id: Int) async throws {
         var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(id)/enqueue_llm_summary")
         req.httpMethod = "POST"
