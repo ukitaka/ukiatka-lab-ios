@@ -5,14 +5,32 @@ import SwiftUI
 struct BookmarkDetailFeature {
     @ObservableState
     struct State: Equatable {
-        let bookmark: Bookmark
+        var isFetching = false
+        var bookmark: Bookmark
     }
 
-    enum Action {}
+    enum Action {
+        case refetchBookmarkDetail
+        case updateBookmark(Bookmark)
+    }
+
+    @Dependency(\.labAPIClient) private var labAPIClient
 
     var body: some ReducerOf<Self> {
-        Reduce { _, _ in
-            .none
+        Reduce { state, action in
+            switch action {
+            case .refetchBookmarkDetail:
+                state.isFetching = true
+                return .run { [bookmarkID = state.bookmark.id] send in
+                    let bookmark = try await labAPIClient.fetchBookmark(id: bookmarkID)
+                    await send(.updateBookmark(bookmark))
+                }
+
+            case let .updateBookmark(bookmark):
+                state.isFetching = false
+                state.bookmark = bookmark
+                return .none
+            }
         }
     }
 }

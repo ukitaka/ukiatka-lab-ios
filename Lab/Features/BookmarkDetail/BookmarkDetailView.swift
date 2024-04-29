@@ -4,6 +4,12 @@ import SwiftUI
 struct BookmarkDetailView: View {
     @Bindable var store: StoreOf<BookmarkDetailFeature>
 
+    let dateFormatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df
+    }()
+
     @ViewBuilder
     var body: some View {
         ScrollView {
@@ -21,13 +27,30 @@ struct BookmarkDetailView: View {
                         .font(.caption)
                         .foregroundStyle(.labText)
                     Spacer()
+                    Text(dateFormatter.string(from: store.bookmark.createdAt))
+                        .font(.caption)
+                        .foregroundStyle(.labText)
+                    if store.isFetching {
+                        LogoLoadingView(width: 16.0, height: 16.0)
+                    }
                 }.padding(.bottom, 4.0)
+                BookmarkImage(bookmark: store.bookmark)
+                    .padding(.bottom, 8.0)
                 Text(store.bookmark.title)
                     .font(.headline)
+                if let llmSummary = store.bookmark.llmSummary {
+                    VStack {
+                        Text("AI要約")
+                        Text(llmSummary.summary)
+                    }
+                }
                 Spacer()
             }
             .padding()
             .navigationTitle(store.bookmark.siteNameForDisplay)
+        }
+        .onAppear {
+            store.send(.refetchBookmarkDetail)
         }
     }
 }
