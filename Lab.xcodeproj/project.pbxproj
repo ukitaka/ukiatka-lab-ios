@@ -30,6 +30,7 @@
 		E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
 		E84346B22BCF77E0008F1FE3 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E84346B12BCF77E0008F1FE3 /* ComposableArchitecture */; };
 		E84346B42BCF77E6008F1FE3 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = E84346B32BCF77E6008F1FE3 /* Supabase */; };
+		E87366962BDFD96E0006E18E /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87366952BDFD96E0006E18E /* Action.swift */; };
 		E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E873D96F2BC8027300DAF86E /* LoginFeature.swift */; };
 		E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E873D9722BC8028900DAF86E /* ComposableArchitecture */; };
 		E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17202BCB6F07004F28E4 /* HomeFeature.swift */; };
@@ -91,6 +92,7 @@
 		E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailFeature.swift; sourceTree = "<group>"; };
 		E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailView.swift; sourceTree = "<group>"; };
 		E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
+		E87366952BDFD96E0006E18E /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		E87D17202BCB6F07004F28E4 /* HomeFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeature.swift; sourceTree = "<group>"; };
 		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				E8FF5AF92BC7FFD10049A49F /* Assets */,
 				E87D172A2BCBA29A004F28E4 /* Dependencies */,
 				E83A3BBE2BC3E4F300248AF5 /* LabApp.swift */,
+				E87366952BDFD96E0006E18E /* Action.swift */,
 			);
 			path = Lab;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */,
 				E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */,
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
+				E87366962BDFD96E0006E18E /* Action.swift in Sources */,
 				E8A873782BDFA836001B0E7F /* DateFormatter.swift in Sources */,
 				E8C05FE72BCBC70200BA2361 /* Skeleton.swift in Sources */,
 				E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */,

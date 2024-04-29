@@ -13,8 +13,7 @@ struct HomeFeature {
     }
 
     enum Action {
-        case startFetching
-        case completeFetching([Bookmark])
+        case fetchBookmarks(APIRequestAction<[Bookmark]>)
         case addButtonTapped
         case path(StackActionOf<Path>)
         case destination(PresentationAction<Destination.Action>)
@@ -35,14 +34,18 @@ struct HomeFeature {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
-            case .startFetching:
+            case .fetchBookmarks(.startFetching):
                 state.isFetching = true
                 return .run { send in
-                    let bookmarks = try await labAPIClient.fetchBookmarks()
-                    await send(.completeFetching(bookmarks))
+                    do {
+                        let bookmarks = try await labAPIClient.fetchBookmarks()
+                        await send(.fetchBookmarks(.completed(bookmarks)))
+                    } catch {
+                        await send(.fetchBookmarks(.error(error)))
+                    }
                 }
 
-            case let .completeFetching(bookmarks):
+            case let .fetchBookmarks(.completed(bookmarks)):
                 state.isFetching = false
                 state.bookmarks = bookmarks
                 return .none
@@ -54,13 +57,17 @@ struct HomeFeature {
             case .path(.element(id: _, action: .bookmarkDetail(.doneDelete))):
                 _ = state.path.popLast()
                 return .run { send in
-                    await send(.startFetching) // reload
+                    await send(.fetchBookmarks(.startFetching)) // reload
                 }
 
             case .destination:
                 return .none
 
             case .path:
+                return .none
+
+            case let .fetchBookmarks(error):
+                print(error) // error handling
                 return .none
             }
         }

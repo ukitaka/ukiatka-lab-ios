@@ -10,7 +10,7 @@ struct HomeView: View {
         if store.isFetching {
             LogoLoadingView(width: 32.0, height: 32.0)
                 .onAppear {
-                    store.send(.startFetching)
+                    store.send(.fetchBookmarks(.startFetching))
                 }
         } else {
             mainView()
@@ -36,7 +36,7 @@ struct HomeView: View {
                     do {
                         let bookmarks = try await labAPIClient.fetchBookmarks()
                         DispatchQueue.main.async {
-                            store.send(.completeFetching(bookmarks))
+                            store.send(.fetchBookmarks(.completed(bookmarks)))
                         }
                     } catch {
                         print(error)
