@@ -7,10 +7,14 @@ struct Bookmark: Equatable, Decodable, Hashable, Identifiable {
     let imageUrl: String
     let siteName: String?
     let description: String?
-}
+    let createdAt: Date
+    let llmSummary: LLMSummary?
 
-extension Bookmark {
     var domain: String {
         URL(string: url)!.host()!
     }
+}
+
+struct LLMSummary: Equatable, Decodable, Hashable {
+    let summary: String
 }

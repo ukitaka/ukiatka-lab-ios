@@ -3,9 +3,12 @@ import Foundation
 
 actor LabAPIClient: Sendable {
     let baseURL: String
+    let jsonDecoder: JSONDecoder
 
     init(baseURL: String) {
         self.baseURL = baseURL
+        jsonDecoder = JSONDecoder()
+        jsonDecoder.dateDecodingStrategy = .formatted(.iso8601Full)
     }
 
     struct APIError: Error, Decodable {
@@ -16,7 +19,7 @@ actor LabAPIClient: Sendable {
 
     func fetchBookmarks() async throws -> [Bookmark] {
         let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/bookmarks"))
-        return try JSONDecoder().decode([Bookmark].self, from: data)
+        return try jsonDecoder.decode([Bookmark].self, from: data)
     }
 
     func addBookmark(urlString: String) async throws -> Bookmark {
@@ -47,7 +50,7 @@ actor LabAPIClient: Sendable {
             }
         }
 
-        return try JSONDecoder().decode(Bookmark.self, from: data)
+        return try jsonDecoder.decode(Bookmark.self, from: data)
     }
 
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
@@ -59,6 +62,17 @@ actor LabAPIClient: Sendable {
         request.setValue(accessToken, forHTTPHeaderField: "X-LAB-ACCESS-TOKEN")
         return request
     }
+}
+
+extension DateFormatter {
+    static let iso8601Full: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
 }
 
 enum LabAPIClientKey: DependencyKey {
