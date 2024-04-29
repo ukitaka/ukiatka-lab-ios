@@ -30,12 +30,18 @@ struct HomeView: View {
                 // TODO: ここをなんとかしたい
                 // isFetchingをObserveしてtrue -> falseになるまでawaitできるように
                 // 実装できると標準に乗っかれそう
-                // .refreshable {
-                // DispatchQueue.main.async {
-                // store.send(.startFetching)
-                // }
-                // store.publisher.map(\.isFetching).scan(false)
-                // }
+                .refreshable {
+                    // Work around
+                    @Dependency(\.labAPIClient) var labAPIClient
+                    do {
+                        let bookmarks = try await labAPIClient.fetchBookmarks()
+                        DispatchQueue.main.async {
+                            store.send(.completeFetching(bookmarks))
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
                 Button {
                     store.send(.addButtonTapped)
                 } label: {
