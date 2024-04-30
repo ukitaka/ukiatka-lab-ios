@@ -1,5 +1,5 @@
 {
-  "originHash" : "362f2a2ab2fceb68f175e456100c7f3e32c0297e2dfa7b56ca8f453d5d311f8d",
+  "originHash" : "fd22b069ac069611f3ce620bb90b92d8699c2af43bef8bf1cae14716768b97da",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -17,6 +17,15 @@
       "state" : {
         "revision" : "84e546727d66f1adc5439debad16270d0fdd04e7",
         "version" : "4.2.2"
+      }
+    },
+    {
+      "identity" : "richtextkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/danielsaidi/RichTextKit.git",
+      "state" : {
+        "revision" : "f0ecceb71ff3cb12a3143eed13b8b62fea7c34e5",
+        "version" : "1.0.0"
       }
     },
     {
