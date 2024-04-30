@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8019E8B2BE13EA400FF366E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8019E8A2BE13EA400FF366E /* Note.swift */; };
+		E8019E8C2BE1428500FF366E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8019E8A2BE13EA400FF366E /* Note.swift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -75,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E8019E8A2BE13EA400FF366E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E80F8F4C2BC7999900D65531 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */,
+				E8019E8A2BE13EA400FF366E /* Note.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -478,6 +482,7 @@
 				E817B4762BD0A9AE00841482 /* ShareView.swift in Sources */,
 				E817B4712BD0A8D600841482 /* LogoLoadingView.swift in Sources */,
 				E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */,
+				E8019E8C2BE1428500FF366E /* Note.swift in Sources */,
 				E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */,
 				E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */,
 				E817B4772BD0A9AE00841482 /* ShareFeature.swift in Sources */,
@@ -500,6 +505,7 @@
 				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
 				E817B47A2BD0E71300841482 /* WebView.swift in Sources */,
+				E8019E8B2BE13EA400FF366E /* Note.swift in Sources */,
 				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
 				E8BA5C7C2BDF45F700F84852 /* BookmarkImage.swift in Sources */,
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,

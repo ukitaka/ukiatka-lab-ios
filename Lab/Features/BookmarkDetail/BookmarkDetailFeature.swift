@@ -83,7 +83,7 @@ struct BookmarkDetailFeature {
                 return .none
 
             case .addNoteButtonTapped:
-                state.destination = .addNote(AddNoteFeature.State())
+                state.destination = .addNote(AddNoteFeature.State(bookmark: state.bookmark))
                 return .none
             }
         }

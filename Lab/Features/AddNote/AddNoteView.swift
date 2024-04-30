@@ -19,8 +19,7 @@ struct AddNoteView: View {
                     }
                     Spacer()
                     Button("追加") {
-                        // TODO: 追加
-                        print((try? store.text.richTextData(for: .rtf)).map { String(data: $0, encoding: .utf8) })
+                        store.send(.addNote(.startFetching))
                     }
                     .frame(width: 80.0, height: 32.0)
                     .background(Color.labPrimary)

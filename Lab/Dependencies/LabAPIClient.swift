@@ -17,6 +17,8 @@ actor LabAPIClient: Sendable {
 
     @Dependency(\.loginSessionClient) private var loginSessionClient
 
+    // MARK: - Bookmarks
+
     func fetchBookmarks() async throws -> [Bookmark] {
         let (data, _) = try await URLSession.shared.data(for: urlRequestWithAuthHeader(path: "/bookmarks"))
         return try jsonDecoder.decode([Bookmark].self, from: data)
@@ -72,6 +74,50 @@ actor LabAPIClient: Sendable {
         }
 
         return try jsonDecoder.decode(Bookmark.self, from: data)
+    }
+
+    // MARK: - Notes
+
+    func deleteAllNotes(bookmarkID: Int) async throws {
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note")
+        req.httpMethod = "DELETE"
+        let (data, _) = try await URLSession.shared.data(for: req)
+        // TODO: error handling
+        print(String(data: data, encoding: .utf8) ?? "no data")
+    }
+
+    func deleteNote(bookmarkID: Int, noteID: Int) async throws {
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note/\(noteID)")
+        req.httpMethod = "DELETE"
+        let (data, _) = try await URLSession.shared.data(for: req)
+        // TODO: error handling
+        print(String(data: data, encoding: .utf8) ?? "no data")
+    }
+
+    func addNote(bookmarkID: Int, content: String) async throws -> Note {
+        struct JSONBody: Encodable {
+            let content: String
+        }
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note")
+        req.httpMethod = "POST"
+        let jsonData = try JSONEncoder().encode(JSONBody(content: content))
+
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.httpBody = jsonData
+
+        let (data, res) = try await URLSession.shared.data(for: req)
+
+        if let res = res as? HTTPURLResponse, res.statusCode != 201 {
+            print(res.statusCode)
+            print(String(data: data, encoding: .utf8) ?? "")
+            if let apiError = try? JSONDecoder().decode(APIError.self, from: data) {
+                throw apiError
+            } else {
+                throw APIError(error: "unexpected error. HTTP　status: \(res.statusCode), failed to add note")
+            }
+        }
+
+        return try jsonDecoder.decode(Note.self, from: data)
     }
 
     private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
