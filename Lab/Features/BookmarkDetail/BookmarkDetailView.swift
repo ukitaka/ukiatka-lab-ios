@@ -12,8 +12,13 @@ struct BookmarkDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16.0) {
-                BookmarkImage(bookmark: store.bookmark)
-                    .onTapGesture { store.send(.openURL(URL(string: store.bookmark.url)!)) }
+                ZStack {
+                    BookmarkImage(bookmark: store.bookmark)
+                        .onTapGesture { store.send(.openURL(URL(string: store.bookmark.url)!)) }
+                    if store.isFetching {
+                        LogoLoadingView(width: 16.0, height: 16.0)
+                    }
+                }
                 Divider()
                 siteNameAndTitle().padding(.bottom, 8.0)
                 Divider()
@@ -24,7 +29,7 @@ struct BookmarkDetailView: View {
                             opacity = 1.0
                         }
                     }
-                Divider()
+                Divider().padding(.bottom, 200.0)
                 Spacer()
             }
             .padding()
@@ -43,6 +48,9 @@ struct BookmarkDetailView: View {
                 store.send(.deleteBookmark(.confirmation))
             } label: {
                 Text("ブックマークを削除")
+            }
+            Button("AI要約を再生成") {
+                store.send(.requestLLMSummary)
             }
         } message: { _ in
             Text("ブックマークを管理")
@@ -78,9 +86,6 @@ struct BookmarkDetailView: View {
             Text(dateFormatter.string(from: store.bookmark.createdAt))
                 .font(.caption)
                 .foregroundStyle(.labText)
-            if store.isFetching {
-                LogoLoadingView(width: 16.0, height: 16.0)
-            }
         }
         Text(store.bookmark.title)
             .font(.headline)
@@ -95,6 +100,7 @@ struct BookmarkDetailView: View {
                 Text("AI要約")
                     .foregroundColor(.labText)
                     .fontWeight(.semibold)
+                Spacer()
             }
             .padding(.bottom, 8.0)
             if let llmSummary = store.bookmark.llmSummary {
@@ -103,21 +109,31 @@ struct BookmarkDetailView: View {
                     Text(llmSummary.summary).lineSpacing(8.0)
 
                 case .queued:
-                    Text("要約を生成中です...").lineSpacing(8.0)
+                    HStack {
+                        Text("要約を生成中です...")
+                    }
                 }
             } else {
                 HStack {
-                    Button("要約をリクエスト", systemImage: "pencil.and.scribble") {
-                        store.send(.requestLLMSummary)
-                    }
-                    .disabled(store.isFetching)
-                    .frame(width: 180.0, height: 48.0)
-                    .background(store.isFetching ? .gray : Color.labPrimary)
-                    .foregroundColor(Color.white)
-                    .cornerRadius(16.0)
-                    .fontWeight(.semibold)
+                    llmSummaryButton()
+                    Spacer()
                 }
             }
+        }
+    }
+
+    @ViewBuilder
+    func llmSummaryButton() -> some View {
+        HStack {
+            Button("要約をリクエスト", systemImage: "pencil.and.scribble") {
+                store.send(.requestLLMSummary)
+            }
+            .disabled(store.isFetching)
+            .frame(width: 180.0, height: 48.0)
+            .background(store.isFetching ? .gray : Color.labPrimary)
+            .foregroundColor(Color.white)
+            .cornerRadius(16.0)
+            .fontWeight(.semibold)
         }
     }
 }
