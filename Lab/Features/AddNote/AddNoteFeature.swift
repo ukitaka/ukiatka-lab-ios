@@ -1,10 +1,13 @@
 import ComposableArchitecture
+import RichTextKit
 import SwiftUI
 
 @Reducer
 struct AddNoteFeature {
     @ObservableState
-    struct State: Equatable {}
+    struct State: Equatable {
+        var text = NSAttributedString(string: "")
+    }
 
     enum Action: BindableAction {
         case binding(BindingAction<State>)
