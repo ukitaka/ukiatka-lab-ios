@@ -56,9 +56,6 @@ struct BookmarkDetailFeature {
                     await openURL(url)
                 }
 
-            case .destination:
-                return .none
-
             case .gearButtonTapped:
                 state.destination = .bookmarkAction
                 return .none
@@ -84,6 +81,13 @@ struct BookmarkDetailFeature {
 
             case .addNoteButtonTapped:
                 state.destination = .addNote(AddNoteFeature.State(bookmark: state.bookmark))
+                return .none
+
+            case let .destination(.presented(.addNote(.addNote(.completed(note))))):
+                state.bookmark.notes?.append(note)
+                return .none
+
+            case .destination:
                 return .none
             }
         }

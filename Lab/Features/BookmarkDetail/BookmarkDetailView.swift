@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import RichTextKit
 import SwiftUI
 
 struct BookmarkDetailView: View {
@@ -30,6 +31,17 @@ struct BookmarkDetailView: View {
                         }
                     }
                 Divider()
+                HStack(alignment: .center) {
+                    Image(systemName: "pencil.and.scribble")
+                        .foregroundColor(.labText)
+                    Text("ノート")
+                        .foregroundColor(.labText)
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                ForEach(store.bookmark.notes ?? []) { note in
+                    RichTextViewer(note.richText)
+                }
                 Button("ノートを追加", systemImage: "pencil.and.scribble") {
                     store.send(.addNoteButtonTapped)
                 }
@@ -172,5 +184,21 @@ private extension Bookmark {
 
     var favicon: URL {
         URL(string: "https://www.google.com/s2/favicons?domain=\(domain)")!
+    }
+}
+
+private extension Note {
+    enum RichTextError: Error {
+        case invalidData
+    }
+
+    var richText: NSAttributedString {
+        guard let data = content.data(using: .utf8) else {
+            return NSAttributedString(string: "読み込みに失敗しました")
+        }
+        guard let text = try? NSAttributedString(data: data, format: .rtf) else {
+            return NSAttributedString(string: "読み込みに失敗しました")
+        }
+        return text
     }
 }

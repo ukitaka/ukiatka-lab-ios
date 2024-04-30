@@ -9,6 +9,7 @@ struct Bookmark: Equatable, Decodable, Hashable, Identifiable {
     let description: String?
     let createdAt: Date
     let llmSummary: LLMSummary?
+    var notes: [Note]?
 
     var domain: String {
         URL(string: url)!.host()!
