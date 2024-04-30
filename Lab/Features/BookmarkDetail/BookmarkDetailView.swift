@@ -41,31 +41,8 @@ struct BookmarkDetailView: View {
         .onAppear {
             store.send(.fetchBookmarkDetail(.startFetching))
         }
-        .confirmationDialog(item: $store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
-            Text("ブックマークを管理")
-        } actions: { _ in
-            Button(role: .destructive) {
-                store.send(.deleteBookmark(.confirmation))
-            } label: {
-                Text("ブックマークを削除")
-            }
-            Button("AI要約を再生成") {
-                store.send(.requestLLMSummary)
-            }
-        } message: { _ in
-            Text("ブックマークを管理")
-        }
-        .alert(item: $store.scope(state: \.destination?.deleteConfirm, action: \.destination.deleteConfirm)) { _ in
-            Text("ブックマークを削除")
-        } actions: { _ in
-            Button(role: .destructive) {
-                store.send(.deleteBookmark(.executeAction))
-            } label: {
-                Text("削除する")
-            }
-        } message: { _ in
-            Text("このブックマークを削除しますか？")
-        }
+        .bookmarkActionDialog(self)
+        .bookmarkDeleteConfirm(self)
     }
 
     @ViewBuilder
@@ -138,11 +115,48 @@ struct BookmarkDetailView: View {
     }
 }
 
+// MARK: - alert and dialog
+
+private extension View {
+    func bookmarkActionDialog(_ bookmarkDetailView: BookmarkDetailView) -> some View {
+        confirmationDialog(item: bookmarkDetailView.$store.scope(state: \.destination?.bookmarkAction, action: \.destination.bookmarkAction)) { _ in
+            Text("ブックマークを管理")
+        } actions: { _ in
+            Button(role: .destructive) {
+                bookmarkDetailView.store.send(.deleteBookmark(.confirmation))
+            } label: {
+                Text("ブックマークを削除")
+            }
+            Button("AI要約を再生成") {
+                bookmarkDetailView.store.send(.requestLLMSummary)
+            }
+        } message: { _ in
+            Text("ブックマークを管理")
+        }
+    }
+    
+    func bookmarkDeleteConfirm(_ bookmarkDetailView: BookmarkDetailView) -> some View {
+        alert(item: bookmarkDetailView.$store.scope(state: \.destination?.deleteConfirm, action: \.destination.deleteConfirm)) { _ in
+            Text("ブックマークを削除")
+        } actions: { _ in
+            Button(role: .destructive) {
+                bookmarkDetailView.store.send(.deleteBookmark(.executeAction))
+            } label: {
+                Text("削除する")
+            }
+        } message: { _ in
+            Text("このブックマークを削除しますか？")
+        }
+    }
+}
+
+// MARK: -
+
 private extension Bookmark {
     var siteNameForDisplay: String {
         siteName ?? domain
     }
-
+    
     var favicon: URL {
         URL(string: "https://www.google.com/s2/favicons?domain=\(domain)")!
     }

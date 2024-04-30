@@ -13,12 +13,14 @@ struct BookmarkDetailFeature {
     @Reducer(state: .equatable) enum Destination {
         case bookmarkAction
         case deleteConfirm
+        case addNote
     }
 
     enum Action {
         case fetchBookmarkDetail(APIRequestAction<Bookmark>)
         case requestLLMSummary
         case gearButtonTapped
+        case addNoteButtonTapped
         case openURL(URL)
         case deleteBookmark(DialogAction)
         case destination(PresentationAction<Destination.Action>)
@@ -78,6 +80,10 @@ struct BookmarkDetailFeature {
 
             case let .fetchBookmarkDetail(.error(error)):
                 print(error) // TODO: Error handling
+                return .none
+
+            case .addNoteButtonTapped:
+                state.destination = .addNote
                 return .none
             }
         }

@@ -46,6 +46,8 @@
 		E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */; };
 		E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */; };
 		E8E5D5552BE0EF0600390975 /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8E5D5542BE0EF0600390975 /* RichTextKit */; };
+		E8E5D55B2BE0EF9D00390975 /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5D5582BE0EF9D00390975 /* AddNoteFeature.swift */; };
+		E8E5D55C2BE0EF9D00390975 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5D5592BE0EF9D00390975 /* AddNoteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		E8C05FEA2BCC10C200BA2361 /* BookmarkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListItem.swift; sourceTree = "<group>"; };
 		E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkFeature.swift; sourceTree = "<group>"; };
 		E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
+		E8E5D5582BE0EF9D00390975 /* AddNoteFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteFeature.swift; sourceTree = "<group>"; };
+		E8E5D5592BE0EF9D00390975 /* AddNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNoteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		E81865D12BC8E50900411BC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E8E5D55A2BE0EF9D00390975 /* AddNote */,
 				E8404FC62BD7904E00163CBE /* BookmarkDetail */,
 				E8C05FF02BCCB41400BA2361 /* AddBookmark */,
 				E87D17222BCB6F07004F28E4 /* Home */,
@@ -280,6 +285,15 @@
 			name = AddBookmark;
 			path = Lab/Features/AddBookmark;
 			sourceTree = SOURCE_ROOT;
+		};
+		E8E5D55A2BE0EF9D00390975 /* AddNote */ = {
+			isa = PBXGroup;
+			children = (
+				E8E5D5582BE0EF9D00390975 /* AddNoteFeature.swift */,
+				E8E5D5592BE0EF9D00390975 /* AddNoteView.swift */,
+			);
+			path = AddNote;
+			sourceTree = "<group>";
 		};
 		E8FF5AF82BC7FF6D0049A49F /* Login */ = {
 			isa = PBXGroup;
@@ -491,9 +505,11 @@
 				E83A3BBF2BC3E4F300248AF5 /* LabApp.swift in Sources */,
 				E873D9702BC8027300DAF86E /* LoginFeature.swift in Sources */,
 				E87D17262BCB7A94004F28E4 /* LabAPIClient.swift in Sources */,
+				E8E5D55B2BE0EF9D00390975 /* AddNoteFeature.swift in Sources */,
 				E8404FC72BD7904E00163CBE /* BookmarkDetailFeature.swift in Sources */,
 				E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */,
 				E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */,
+				E8E5D55C2BE0EF9D00390975 /* AddNoteView.swift in Sources */,
 				E8C05FEB2BCC10C200BA2361 /* BookmarkListItem.swift in Sources */,
 				E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */,
 			);
