@@ -13,7 +13,7 @@ struct BookmarkDetailFeature {
     @Reducer(state: .equatable) enum Destination {
         case bookmarkAction
         case deleteConfirm
-        case addNote
+        case addNote(AddNoteFeature)
     }
 
     enum Action {
@@ -83,7 +83,7 @@ struct BookmarkDetailFeature {
                 return .none
 
             case .addNoteButtonTapped:
-                state.destination = .addNote
+                state.destination = .addNote(AddNoteFeature.State())
                 return .none
             }
         }

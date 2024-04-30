@@ -4,7 +4,7 @@ import SwiftUI
 @Reducer
 struct AddNoteFeature {
     @ObservableState
-    struct State {}
+    struct State: Equatable {}
 
     enum Action: BindableAction {
         case binding(BindingAction<State>)

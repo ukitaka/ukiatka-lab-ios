@@ -29,6 +29,16 @@ struct BookmarkDetailView: View {
                             opacity = 1.0
                         }
                     }
+                Divider()
+                Button("ノートを追加", systemImage: "pencil.and.scribble") {
+                    store.send(.addNoteButtonTapped)
+                }
+                .disabled(store.isFetching)
+                .frame(width: 180.0, height: 48.0)
+                .background(store.isFetching ? .gray : Color.labPrimary)
+                .foregroundColor(Color.white)
+                .cornerRadius(16.0)
+                .fontWeight(.semibold)
                 Divider().padding(.bottom, 200.0)
                 Spacer()
             }
@@ -43,6 +53,9 @@ struct BookmarkDetailView: View {
         }
         .bookmarkActionDialog(self)
         .bookmarkDeleteConfirm(self)
+        .sheet(item: $store.scope(state: \.destination?.addNote, action: \.destination.addNote)) { store in
+            AddNoteView(store: store)
+        }
     }
 
     @ViewBuilder
@@ -134,7 +147,7 @@ private extension View {
             Text("ブックマークを管理")
         }
     }
-    
+
     func bookmarkDeleteConfirm(_ bookmarkDetailView: BookmarkDetailView) -> some View {
         alert(item: bookmarkDetailView.$store.scope(state: \.destination?.deleteConfirm, action: \.destination.deleteConfirm)) { _ in
             Text("ブックマークを削除")
@@ -156,7 +169,7 @@ private extension Bookmark {
     var siteNameForDisplay: String {
         siteName ?? domain
     }
-    
+
     var favicon: URL {
         URL(string: "https://www.google.com/s2/favicons?domain=\(domain)")!
     }
