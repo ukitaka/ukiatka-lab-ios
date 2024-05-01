@@ -9,28 +9,38 @@ struct NoteView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16.0) {
-            HStack(alignment: .center, spacing: 8.0) {
+            HStack(alignment: .bottom, spacing: 8.0) {
                 switch note.editor {
                 case .ukitaka:
                     Image("ukitaka")
                         .resizable()
                         .frame(width: 16.0, height: 16.0)
-                    Text("ukitaka")
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.labText)
-
+                        .cornerRadius(3.0)
+                        .clipped()
                 case .ai:
                     Image(systemName: "brain.filled.head.profile")
                         .resizable()
                         .frame(width: 16.0, height: 16.0)
-                    Text("AI要約")
-                        .fontWeight(.semibold)
-                        .foregroundStyle(Color.labText)
+                }
+                HStack(alignment: .firstTextBaseline) {
+                    switch note.editor {
+                    case .ukitaka:
+                        Text("ukitaka")
+                            .fontWeight(.bold)
+                            .font(.system(size: 15.0))
+                            .foregroundStyle(Color.labText)
+                    case .ai:
+                        Text("AI要約")
+                            .fontWeight(.bold)
+                            .font(.system(size: 15.0))
+                            .foregroundStyle(Color.labText)
+                        Text(datetimeFormmater.string(from: note.createdAt))
+                            .fontWeight(.light)
+                            .font(.caption)
+                    }
+                    Spacer()
                 }
                 Spacer()
-                Text(datetimeFormmater.string(from: note.createdAt))
-                    .font(.caption2)
-                    .fontWeight(.light)
             }
             switch note.status {
             case .completed:
@@ -44,6 +54,7 @@ struct NoteView: View {
                     LogoLoadingView(width: 16.0, height: 16.0)
                 }
             }
+            Divider()
         }
     }
 }

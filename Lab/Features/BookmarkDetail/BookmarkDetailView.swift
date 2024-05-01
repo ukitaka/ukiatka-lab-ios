@@ -89,6 +89,7 @@ struct BookmarkDetailView: View {
             .padding(.bottom, 8.0)
             ForEach(store.bookmark.notes ?? []) { note in
                 NoteView(note: note)
+                    .padding(.bottom, 16.0)
             }
         }
     }
