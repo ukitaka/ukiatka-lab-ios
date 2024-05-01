@@ -23,19 +23,7 @@ struct BookmarkDetailView: View {
                 Divider()
                 siteNameAndTitle().padding(.bottom, 8.0)
                 Divider()
-                HStack(alignment: .center) {
-                    Image(systemName: "pencil.and.scribble")
-                        .foregroundColor(.labText)
-                    Text("ノート")
-                        .foregroundColor(.labText)
-                        .fontWeight(.semibold)
-                    Spacer()
-                }
-                ForEach(store.bookmark.notes ?? []) { note in
-                    Markdown {
-                        note.content
-                    }
-                }
+                noteSection().padding(.bottom, 16.0)
                 Button("ノートを追加", systemImage: "pencil.and.scribble") {
                     store.send(.addNoteButtonTapped)
                 }
@@ -100,17 +88,7 @@ struct BookmarkDetailView: View {
             }
             .padding(.bottom, 8.0)
             ForEach(store.bookmark.notes ?? []) { note in
-                switch note.status {
-                case .completed:
-                    Markdown {
-                        note.content
-                    }.markdownTheme(.labTheme)
-
-                case .queued:
-                    HStack {
-                        Text("要約を生成中です...")
-                    }
-                }
+                NoteView(note: note)
             }
         }
     }

@@ -29,6 +29,7 @@
 		E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */; };
 		E841181F2BE1DE880074DB38 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = E841181E2BE1DE880074DB38 /* MarkdownUI */; };
 		E84118212BE1E4C80074DB38 /* Markdown+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */; };
+		E84118232BE236CF0074DB38 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84118222BE236CF0074DB38 /* NoteView.swift */; };
 		E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */; };
 		E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
 		E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
@@ -99,6 +100,7 @@
 		E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailFeature.swift; sourceTree = "<group>"; };
 		E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailView.swift; sourceTree = "<group>"; };
 		E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Markdown+Theme.swift"; sourceTree = "<group>"; };
+		E84118222BE236CF0074DB38 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		E87366952BDFD96E0006E18E /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				E8BA5C7B2BDF45F700F84852 /* BookmarkImage.swift */,
 				E8A873752BDF90BC001B0E7F /* LabStyleButton.swift */,
 				E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */,
+				E84118222BE236CF0074DB38 /* NoteView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */,
 				E87D17292BCB7F3B004F28E4 /* Bookmarks.swift in Sources */,
 				E81865CF2BC8CCAE00411BC9 /* RootFeature.swift in Sources */,
+				E84118232BE236CF0074DB38 /* NoteView.swift in Sources */,
 				E817B47A2BD0E71300841482 /* WebView.swift in Sources */,
 				E8019E8B2BE13EA400FF366E /* Note.swift in Sources */,
 				E87D17232BCB6F07004F28E4 /* HomeFeature.swift in Sources */,
