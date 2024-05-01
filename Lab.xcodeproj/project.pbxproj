@@ -49,7 +49,6 @@
 		E8C05FEB2BCC10C200BA2361 /* BookmarkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEA2BCC10C200BA2361 /* BookmarkListItem.swift */; };
 		E8C05FF12BCCB41500BA2361 /* AddBookmarkFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEE2BCCB41400BA2361 /* AddBookmarkFeature.swift */; };
 		E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C05FEF2BCCB41400BA2361 /* AddBookmarkView.swift */; };
-		E8E5D5552BE0EF0600390975 /* RichTextKit in Frameworks */ = {isa = PBXBuildFile; productRef = E8E5D5542BE0EF0600390975 /* RichTextKit */; };
 		E8E5D55B2BE0EF9D00390975 /* AddNoteFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5D5582BE0EF9D00390975 /* AddNoteFeature.swift */; };
 		E8E5D55C2BE0EF9D00390975 /* AddNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E5D5592BE0EF9D00390975 /* AddNoteView.swift */; };
 /* End PBXBuildFile section */
@@ -134,7 +133,6 @@
 			files = (
 				E8C05FE92BCBCA8B00BA2361 /* Shimmer in Frameworks */,
 				E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */,
-				E8E5D5552BE0EF0600390975 /* RichTextKit in Frameworks */,
 				E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */,
 				E841181F2BE1DE880074DB38 /* MarkdownUI in Frameworks */,
 			);
@@ -368,7 +366,6 @@
 				E80F8F612BC7A41F00D65531 /* Supabase */,
 				E873D9722BC8028900DAF86E /* ComposableArchitecture */,
 				E8C05FE82BCBCA8B00BA2361 /* Shimmer */,
-				E8E5D5542BE0EF0600390975 /* RichTextKit */,
 				E841181E2BE1DE880074DB38 /* MarkdownUI */,
 			);
 			productName = Lab;
@@ -406,7 +403,6 @@
 				E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */,
 				E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
-				E8E5D5532BE0EEF900390975 /* XCRemoteSwiftPackageReference "RichTextKit" */,
 				E841181D2BE1DE700074DB38 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = E83A3BBC2BC3E4F300248AF5 /* Products */;
@@ -865,14 +861,6 @@
 				minimumVersion = 1.4.2;
 			};
 		};
-		E8E5D5532BE0EEF900390975 /* XCRemoteSwiftPackageReference "RichTextKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/danielsaidi/RichTextKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -913,11 +901,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */;
 			productName = Shimmer;
-		};
-		E8E5D5542BE0EF0600390975 /* RichTextKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E8E5D5532BE0EEF900390975 /* XCRemoteSwiftPackageReference "RichTextKit" */;
-			productName = RichTextKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
