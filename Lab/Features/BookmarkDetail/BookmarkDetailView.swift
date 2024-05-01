@@ -47,6 +47,7 @@ struct BookmarkDetailView: View {
         }
         .bookmarkActionDialog(self)
         .bookmarkDeleteConfirm(self)
+        .noteDeleteConfirm(self)
         .sheet(item: $store.scope(state: \.destination?.addNote, action: \.destination.addNote)) { store in
             AddNoteView(store: store)
         }
@@ -90,6 +91,9 @@ struct BookmarkDetailView: View {
             ForEach(store.bookmark.notes ?? []) { note in
                 NoteView(note: note)
                     .padding(.bottom, 16.0)
+                    .onLongPressGesture {
+                        store.send(.deleteNote(note, .confirmation)) //TODO: fix later
+                    }
             }
         }
     }
@@ -122,7 +126,7 @@ private extension View {
     }
 
     func bookmarkDeleteConfirm(_ bookmarkDetailView: BookmarkDetailView) -> some View {
-        alert(item: bookmarkDetailView.$store.scope(state: \.destination?.deleteConfirm, action: \.destination.deleteConfirm)) { _ in
+        alert(item: bookmarkDetailView.$store.scope(state: \.destination?.deleteBookmarkConfirm, action: \.destination.deleteBookmarkConfirm)) { _ in
             Text("ブックマークを削除")
         } actions: { _ in
             Button(role: .destructive) {
@@ -132,6 +136,20 @@ private extension View {
             }
         } message: { _ in
             Text("このブックマークを削除しますか？")
+        }
+    }
+
+    func noteDeleteConfirm(_ bookmarkDetailView: BookmarkDetailView) -> some View {
+        alert(item: bookmarkDetailView.$store.scope(state: \.destination?.deleteNoteConfirm, action: \.destination.deleteNoteConfirm)) { _ in
+            Text("ノートを削除")
+        } actions: { _ in
+            Button(role: .destructive) {
+                bookmarkDetailView.store.send(.deleteNote(bookmarkDetailView.store.state.selectedNote!, .executeAction))
+            } label: {
+                Text("削除する")
+            }
+        } message: { _ in
+            Text("このノートを削除しますか？")
         }
     }
 }

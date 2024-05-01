@@ -7,12 +7,14 @@ struct BookmarkDetailFeature {
     struct State: Equatable {
         var isFetching = false
         var bookmark: Bookmark
+        var selectedNote: Note?
         @Presents var destination: Destination.State?
     }
 
     @Reducer(state: .equatable) enum Destination {
         case bookmarkAction
-        case deleteConfirm
+        case deleteBookmarkConfirm
+        case deleteNoteConfirm
         case addNote(AddNoteFeature)
     }
 
@@ -25,6 +27,7 @@ struct BookmarkDetailFeature {
         case addNoteButtonTapped
         case openURL(URL)
         case deleteBookmark(DialogAction)
+        case deleteNote(Note, DialogAction)
         case destination(PresentationAction<Destination.Action>)
     }
 
@@ -63,7 +66,7 @@ struct BookmarkDetailFeature {
                 return .none
 
             case .deleteBookmark(.confirmation):
-                state.destination = .deleteConfirm
+                state.destination = .deleteBookmarkConfirm
                 return .none
 
             case .deleteBookmark(.executeAction):
@@ -96,6 +99,24 @@ struct BookmarkDetailFeature {
                 state.isFetching = true
                 return .run { [id = state.bookmark.id] send in
                     try await labAPIClient.generateOGImage(id: id)
+                    await send(.fetchBookmarkDetail(.startFetching))
+                }
+
+            case let .deleteNote(note, .confirmation):
+                state.selectedNote = note
+                state.destination = .deleteNoteConfirm
+                return .none
+
+            case let .deleteNote(note, .executeAction):
+                state.isFetching = true
+                return .run { [bookmarkID = state.bookmark.id] send in
+                    try await labAPIClient.deleteNote(bookmarkID: bookmarkID, noteID: note.id)
+                    await send(.deleteNote(note, .completed))
+                }
+
+            case .deleteNote(_, .completed):
+                state.selectedNote = nil
+                return .run { send in
                     await send(.fetchBookmarkDetail(.startFetching))
                 }
 

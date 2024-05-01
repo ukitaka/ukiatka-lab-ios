@@ -30,7 +30,7 @@ struct NoteView: View {
                             .fontWeight(.bold)
                             .font(.system(size: 15.0))
                             .foregroundStyle(Color.labText)
-                        
+
                     case .ai:
                         Text("AI要約")
                             .fontWeight(.bold)
