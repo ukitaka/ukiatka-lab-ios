@@ -27,6 +27,8 @@
 		E83A3BC72BC3E4F400248AF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */; };
 		E8404FC72BD7904E00163CBE /* BookmarkDetailFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */; };
 		E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */; };
+		E841181F2BE1DE880074DB38 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = E841181E2BE1DE880074DB38 /* MarkdownUI */; };
+		E84118212BE1E4C80074DB38 /* Markdown+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */; };
 		E84346AE2BCF7783008F1FE3 /* LoginSessionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81865D52BC8EA3D00411BC9 /* LoginSessionClient.swift */; };
 		E84346AF2BCF7783008F1FE3 /* LabAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */; };
 		E84346B02BCF77B8008F1FE3 /* Bookmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */; };
@@ -97,6 +99,7 @@
 		E83A3BC62BC3E4F400248AF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8404FC42BD7904E00163CBE /* BookmarkDetailFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailFeature.swift; sourceTree = "<group>"; };
 		E8404FC52BD7904E00163CBE /* BookmarkDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarkDetailView.swift; sourceTree = "<group>"; };
+		E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Markdown+Theme.swift"; sourceTree = "<group>"; };
 		E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 		E87366952BDFD96E0006E18E /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		E873D96F2BC8027300DAF86E /* LoginFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 				E873D9732BC8028900DAF86E /* ComposableArchitecture in Frameworks */,
 				E8E5D5552BE0EF0600390975 /* RichTextKit in Frameworks */,
 				E80F8F622BC7A41F00D65531 /* Supabase in Frameworks */,
+				E841181F2BE1DE880074DB38 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +193,7 @@
 				E817B4792BD0E71300841482 /* WebView.swift */,
 				E8BA5C7B2BDF45F700F84852 /* BookmarkImage.swift */,
 				E8A873752BDF90BC001B0E7F /* LabStyleButton.swift */,
+				E84118202BE1E4C80074DB38 /* Markdown+Theme.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				E873D9722BC8028900DAF86E /* ComposableArchitecture */,
 				E8C05FE82BCBCA8B00BA2361 /* Shimmer */,
 				E8E5D5542BE0EF0600390975 /* RichTextKit */,
+				E841181E2BE1DE880074DB38 /* MarkdownUI */,
 			);
 			productName = Lab;
 			productReference = E83A3BBB2BC3E4F300248AF5 /* Lab.app */;
@@ -401,6 +407,7 @@
 				E8FF5AF72BC7FE6D0049A49F /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
 				E8E5D5532BE0EEF900390975 /* XCRemoteSwiftPackageReference "RichTextKit" */,
+				E841181D2BE1DE700074DB38 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = E83A3BBC2BC3E4F300248AF5 /* Products */;
 			projectDirPath = "";
@@ -516,6 +523,7 @@
 				E87D17242BCB6F07004F28E4 /* HomeView.swift in Sources */,
 				E81865D42BC8E58500411BC9 /* LogoLoadingView.swift in Sources */,
 				E8E5D55C2BE0EF9D00390975 /* AddNoteView.swift in Sources */,
+				E84118212BE1E4C80074DB38 /* Markdown+Theme.swift in Sources */,
 				E8C05FEB2BCC10C200BA2361 /* BookmarkListItem.swift in Sources */,
 				E81865D02BC8CCAE00411BC9 /* RootView.swift in Sources */,
 			);
@@ -841,6 +849,14 @@
 				minimumVersion = 2.5.1;
 			};
 		};
+		E841181D2BE1DE700074DB38 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		E8C05FE52BCBC6E000BA2361 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
@@ -872,6 +888,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E80F8F5B2BC7A2E000D65531 /* XCRemoteSwiftPackageReference "supabase-swift" */;
 			productName = Supabase;
+		};
+		E841181E2BE1DE880074DB38 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E841181D2BE1DE700074DB38 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 		E84346B12BCF77E0008F1FE3 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

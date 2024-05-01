@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import MarkdownUI
 import RichTextKit
 import SwiftUI
 
@@ -108,7 +109,9 @@ struct BookmarkDetailView: View {
             if let llmSummary = store.bookmark.llmSummary {
                 switch llmSummary.status {
                 case .completed:
-                    Text(llmSummary.summary).lineSpacing(8.0)
+                    Markdown {
+                        llmSummary.summary
+                    }.markdownTheme(.labTheme)
 
                 case .queued:
                     HStack {
