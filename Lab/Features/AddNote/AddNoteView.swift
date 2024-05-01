@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import MarkdownUI
 import SwiftUI
 
 struct AddNoteView: View {
@@ -16,6 +17,9 @@ struct AddNoteView: View {
                         dismiss()
                     }
                     Spacer()
+                    Button("プレビュー切り替え") {
+                        store.send(.togglePreviewMode)
+                    }
                     Button("追加") {
                         store.send(.addNote(.startFetching))
                     }
@@ -24,6 +28,25 @@ struct AddNoteView: View {
                     .foregroundColor(Color.white)
                     .cornerRadius(16.0)
                     .fontWeight(.semibold)
+                }
+                switch store.previewMode {
+                case .markdown:
+                    Markdown {
+                        store.text
+                    }.markdownTheme(.labTheme)
+
+                case .plaintext:
+                    ZStack(alignment: .topLeading) {
+                        TextEditor(text: $store.text)
+                            .padding(.horizontal, -4)
+                            .frame(minHeight: 200)
+                            .focused($focus)
+                        if store.text.isEmpty {
+                            Text("ここにノートを入力...").foregroundColor(Color(uiColor: .placeholderText))
+                                .padding(.vertical, 8)
+                                .allowsHitTesting(false)
+                        }
+                    }
                 }
                 Spacer()
             }

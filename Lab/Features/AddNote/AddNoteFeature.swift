@@ -7,11 +7,18 @@ struct AddNoteFeature {
     struct State: Equatable {
         var bookmark: Bookmark
         var text: String = ""
+        var previewMode: PreviewMode = .plaintext
     }
 
     enum Action: BindableAction {
         case addNote(APIRequestAction<Note>)
+        case togglePreviewMode
         case binding(BindingAction<State>)
+    }
+
+    enum PreviewMode {
+        case plaintext
+        case markdown
     }
 
     @Dependency(\.labAPIClient) var labAPIClient
@@ -33,6 +40,10 @@ struct AddNoteFeature {
 
             case .addNote(.completed):
                 return .run { _ in await dismiss() }
+
+            case .togglePreviewMode:
+                state.previewMode = state.previewMode == .plaintext ? .markdown : .plaintext
+                return .none
 
             case .binding:
                 return .none
