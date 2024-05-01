@@ -159,6 +159,12 @@ private extension View {
             Button("AI要約を再生成") {
                 bookmarkDetailView.store.send(.requestLLMSummary)
             }
+            Button("メタデータを再生成") {
+                bookmarkDetailView.store.send(.requestMetadata)
+            }
+            Button("OGP画像を生成") {
+                bookmarkDetailView.store.send(.requestGenerateOGImage)
+            }
         } message: { _ in
             Text("ブックマークを管理")
         }

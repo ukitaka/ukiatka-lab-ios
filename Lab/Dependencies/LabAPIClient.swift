@@ -45,7 +45,15 @@ actor LabAPIClient: Sendable {
         print(String(data: data, encoding: .utf8) ?? "no data")
     }
 
-    func addBookmark(urlString: String) async throws -> Bookmark {
+    func generateOGImage(id: Int) async throws {
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(id)/generate_og_image")
+        req.httpMethod = "POST"
+        let (data, _) = try await URLSession.shared.data(for: req)
+        // TODO: error handling
+        print(String(data: data, encoding: .utf8) ?? "no data")
+    }
+
+    func addBookmark(urlString: String, force: Bool = false) async throws -> Bookmark {
         guard let url = URL(string: urlString, encodingInvalidCharacters: false) else {
             throw APIError(error: "url format is invalid.")
         }
@@ -53,7 +61,7 @@ actor LabAPIClient: Sendable {
         struct JSONBody: Encodable {
             let url: String
         }
-        var req = try await urlRequestWithAuthHeader(path: "/bookmarks")
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks", queryItems: force ? [URLQueryItem(name: "force", value: "true")] : nil)
         req.httpMethod = "POST"
         let jsonData = try JSONEncoder().encode(JSONBody(url: urlString))
 
@@ -120,10 +128,11 @@ actor LabAPIClient: Sendable {
         return try jsonDecoder.decode(Note.self, from: data)
     }
 
-    private func urlRequestWithAuthHeader(path: String) async throws -> URLRequest {
+    private func urlRequestWithAuthHeader(path: String, queryItems: [URLQueryItem]? = nil) async throws -> URLRequest {
         let accessToken = try await loginSessionClient.accessToken()
         var urlComponents = URLComponents(string: baseURL)!
         urlComponents.path = path
+        urlComponents.queryItems = queryItems
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
         request.setValue(accessToken, forHTTPHeaderField: "X-LAB-ACCESS-TOKEN")

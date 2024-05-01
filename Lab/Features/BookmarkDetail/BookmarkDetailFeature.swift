@@ -19,6 +19,8 @@ struct BookmarkDetailFeature {
     enum Action {
         case fetchBookmarkDetail(APIRequestAction<Bookmark>)
         case requestLLMSummary
+        case requestMetadata
+        case requestGenerateOGImage
         case gearButtonTapped
         case addNoteButtonTapped
         case openURL(URL)
@@ -82,6 +84,20 @@ struct BookmarkDetailFeature {
             case .addNoteButtonTapped:
                 state.destination = .addNote(AddNoteFeature.State(bookmark: state.bookmark))
                 return .none
+
+            case .requestMetadata:
+                state.isFetching = true
+                return .run { [url = state.bookmark.url] send in
+                    let bookmark = try await labAPIClient.addBookmark(urlString: url, force: true)
+                    await send(.fetchBookmarkDetail(.completed(bookmark)))
+                }
+
+            case .requestGenerateOGImage:
+                state.isFetching = true
+                return .run { [id = state.bookmark.id] send in
+                    try await labAPIClient.generateOGImage(id: id)
+                    await send(.fetchBookmarkDetail(.startFetching))
+                }
 
             case let .destination(.presented(.addNote(.addNote(.completed(note))))):
                 state.bookmark.notes?.append(note)
