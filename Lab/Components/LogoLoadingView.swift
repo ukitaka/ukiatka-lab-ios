@@ -13,7 +13,7 @@ struct LogoLoadingView: View {
             .repeatForever(autoreverses: false)
     }
 
-    init(width: CGFloat = 64.0, height: CGFloat = 64.0) {
+    init(width: CGFloat = 32.0, height: CGFloat = 32.0) {
         self.width = width
         self.height = height
     }

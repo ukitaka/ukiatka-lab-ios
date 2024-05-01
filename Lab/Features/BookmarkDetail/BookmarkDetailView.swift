@@ -40,7 +40,9 @@ struct BookmarkDetailView: View {
                     Spacer()
                 }
                 ForEach(store.bookmark.notes ?? []) { note in
-                    Text(note.content)
+                    Markdown {
+                        note.content
+                    }
                 }
                 Button("ノートを追加", systemImage: "pencil.and.scribble") {
                     store.send(.addNoteButtonTapped)

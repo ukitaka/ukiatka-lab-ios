@@ -79,7 +79,7 @@ actor LabAPIClient: Sendable {
     // MARK: - Notes
 
     func deleteAllNotes(bookmarkID: Int) async throws {
-        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note")
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/notes")
         req.httpMethod = "DELETE"
         let (data, _) = try await URLSession.shared.data(for: req)
         // TODO: error handling
@@ -87,7 +87,7 @@ actor LabAPIClient: Sendable {
     }
 
     func deleteNote(bookmarkID: Int, noteID: Int) async throws {
-        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note/\(noteID)")
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/notes/\(noteID)")
         req.httpMethod = "DELETE"
         let (data, _) = try await URLSession.shared.data(for: req)
         // TODO: error handling
@@ -98,7 +98,7 @@ actor LabAPIClient: Sendable {
         struct JSONBody: Encodable {
             let content: String
         }
-        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/note")
+        var req = try await urlRequestWithAuthHeader(path: "/bookmarks/\(bookmarkID)/notes")
         req.httpMethod = "POST"
         let jsonData = try JSONEncoder().encode(JSONBody(content: content))
 

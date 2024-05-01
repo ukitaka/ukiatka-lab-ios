@@ -54,6 +54,9 @@ struct AddNoteView: View {
             .onAppear {
                 focus = true
             }
+            if store.isFetching {
+                LogoLoadingView()
+            }
         }
     }
 }

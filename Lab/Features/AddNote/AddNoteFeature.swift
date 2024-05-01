@@ -8,6 +8,7 @@ struct AddNoteFeature {
         var bookmark: Bookmark
         var text: String = ""
         var previewMode: PreviewMode = .plaintext
+        var isFetching = false
     }
 
     enum Action: BindableAction {
@@ -29,16 +30,19 @@ struct AddNoteFeature {
         Reduce { state, action in
             switch action {
             case .addNote(.startFetching):
+                state.isFetching = true
                 return .run { [bookmarkID = state.bookmark.id, text = state.text] send in
                     let note = try await labAPIClient.addNote(bookmarkID: bookmarkID, content: text)
                     await send(.addNote(.completed(note)))
                 }
 
             case let .addNote(.error(error)):
+                state.isFetching = false
                 print(error)
                 return .none
 
             case .addNote(.completed):
+                state.isFetching = false
                 return .run { _ in await dismiss() }
 
             case .togglePreviewMode:
