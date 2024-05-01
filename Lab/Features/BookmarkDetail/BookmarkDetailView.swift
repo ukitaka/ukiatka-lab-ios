@@ -23,14 +23,6 @@ struct BookmarkDetailView: View {
                 Divider()
                 siteNameAndTitle().padding(.bottom, 8.0)
                 Divider()
-                llmSummarySection().padding(4.0)
-                    .opacity(opacity)
-                    .onAppear {
-                        withAnimation(.easeInOut(duration: 0.8)) {
-                            opacity = 1.0
-                        }
-                    }
-                Divider()
                 HStack(alignment: .center) {
                     Image(systemName: "pencil.and.scribble")
                         .foregroundColor(.labText)
@@ -96,22 +88,22 @@ struct BookmarkDetailView: View {
     }
 
     @ViewBuilder
-    func llmSummarySection() -> some View {
+    func noteSection() -> some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
                 Image(systemName: "pencil.and.scribble")
                     .foregroundColor(.labText)
-                Text("AI要約")
+                Text("ノート")
                     .foregroundColor(.labText)
                     .fontWeight(.semibold)
                 Spacer()
             }
             .padding(.bottom, 8.0)
-            if let llmSummary = store.bookmark.llmSummary {
-                switch llmSummary.status {
+            ForEach(store.bookmark.notes ?? []) { note in
+                switch note.status {
                 case .completed:
                     Markdown {
-                        llmSummary.summary
+                        note.content
                     }.markdownTheme(.labTheme)
 
                 case .queued:
@@ -119,27 +111,7 @@ struct BookmarkDetailView: View {
                         Text("要約を生成中です...")
                     }
                 }
-            } else {
-                HStack {
-                    llmSummaryButton()
-                    Spacer()
-                }
             }
-        }
-    }
-
-    @ViewBuilder
-    func llmSummaryButton() -> some View {
-        HStack {
-            Button("要約をリクエスト", systemImage: "pencil.and.scribble") {
-                store.send(.requestLLMSummary)
-            }
-            .disabled(store.isFetching)
-            .frame(width: 180.0, height: 48.0)
-            .background(store.isFetching ? .gray : Color.labPrimary)
-            .foregroundColor(Color.white)
-            .cornerRadius(16.0)
-            .fontWeight(.semibold)
         }
     }
 }
@@ -156,7 +128,7 @@ private extension View {
             } label: {
                 Text("ブックマークを削除")
             }
-            Button("AI要約を再生成") {
+            Button("AI要約を生成") {
                 bookmarkDetailView.store.send(.requestLLMSummary)
             }
             Button("メタデータを再生成") {
