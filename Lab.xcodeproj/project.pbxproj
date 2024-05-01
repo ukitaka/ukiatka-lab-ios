@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E8019E8B2BE13EA400FF366E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8019E8A2BE13EA400FF366E /* Note.swift */; };
 		E8019E8C2BE1428500FF366E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8019E8A2BE13EA400FF366E /* Note.swift */; };
-		E8019E8F2BE1D46600FF366E /* MarkdownEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8019E8E2BE1D46600FF366E /* MarkdownEditor.swift */; };
 		E80F8F4F2BC7999900D65531 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F8F4E2BC7999900D65531 /* ShareViewController.swift */; };
 		E80F8F522BC7999900D65531 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = E80F8F512BC7999900D65531 /* Base */; };
 		E80F8F562BC7999900D65531 /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E80F8F4C2BC7999900D65531 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -79,7 +78,6 @@
 
 /* Begin PBXFileReference section */
 		E8019E8A2BE13EA400FF366E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		E8019E8E2BE1D46600FF366E /* MarkdownEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownEditor.swift; sourceTree = "<group>"; };
 		E803F0ED2BC5916A0018C688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E80F8F4C2BC7999900D65531 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80F8F4E2BC7999900D65531 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -149,14 +147,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		E8019E8D2BE1D40500FF366E /* MarkdownEditor */ = {
-			isa = PBXGroup;
-			children = (
-				E8019E8E2BE1D46600FF366E /* MarkdownEditor.swift */,
-			);
-			path = MarkdownEditor;
-			sourceTree = "<group>";
-		};
 		E80F8F4D2BC7999900D65531 /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,7 +184,6 @@
 		E81865D22BC8E57100411BC9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E8019E8D2BE1D40500FF366E /* MarkdownEditor */,
 				E81865D32BC8E58500411BC9 /* LogoLoadingView.swift */,
 				E8C05FE62BCBC70200BA2361 /* Skeleton.swift */,
 				E817B4792BD0E71300841482 /* WebView.swift */,
@@ -507,7 +496,6 @@
 			files = (
 				E8A873762BDF90BC001B0E7F /* LabStyleButton.swift in Sources */,
 				E8404FC82BD7904E00163CBE /* BookmarkDetailView.swift in Sources */,
-				E8019E8F2BE1D46600FF366E /* MarkdownEditor.swift in Sources */,
 				E8C05FF22BCCB41500BA2361 /* AddBookmarkView.swift in Sources */,
 				E81865D62BC8EA3D00411BC9 /* LoginSessionClient.swift in Sources */,
 				E87366962BDFD96E0006E18E /* Action.swift in Sources */,

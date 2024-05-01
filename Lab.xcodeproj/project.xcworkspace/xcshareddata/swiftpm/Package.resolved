@@ -1,5 +1,5 @@
 {
-  "originHash" : "fd22b069ac069611f3ce620bb90b92d8699c2af43bef8bf1cae14716768b97da",
+  "originHash" : "46dec0e6fa7187b2714dbf0b1ddeaf73258f8617fa62f7b8f7a7ff5b13473b2d",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -53,6 +53,15 @@
       "state" : {
         "revision" : "a8421d68068d8f45fbceb418fbf22c5dad4afd33",
         "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swift-cmark",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-cmark.git",
+      "state" : {
+        "revision" : "f218e5d7691f78b55bfa39b367763f4612486c35",
+        "version" : "0.3.0"
       }
     },
     {
@@ -116,6 +125,15 @@
       "state" : {
         "revision" : "2481e39ea43e14556ca9628259fa6b377427730c",
         "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "swift-markdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-markdown.git",
+      "state" : {
+        "revision" : "e4f95e2dc23097a1a9a1dfdfe3fe3ee44de77378",
+        "version" : "0.3.0"
       }
     },
     {
