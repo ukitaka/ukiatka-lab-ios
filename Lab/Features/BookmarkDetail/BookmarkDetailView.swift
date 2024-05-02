@@ -92,7 +92,7 @@ struct BookmarkDetailView: View {
                 NoteView(note: note)
                     .padding(.bottom, 16.0)
                     .onLongPressGesture {
-                        store.send(.deleteNote(note, .confirmation)) //TODO: fix later
+                        store.send(.deleteNote(note, .confirmation)) // TODO: fix later
                     }
             }
         }
