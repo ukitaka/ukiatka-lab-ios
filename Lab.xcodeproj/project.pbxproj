@@ -231,8 +231,6 @@
 		E83A3BB22BC3E4F300248AF5 = {
 			isa = PBXGroup;
 			children = (
-				E8A78DC62BE3E9FA0075A5DC /* NotificationServiceExtensionDebug.entitlements */,
-				E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */,
 				E83A3BBD2BC3E4F300248AF5 /* Lab */,
 				E800AC892BC7C48600BED4F0 /* Extensions */,
 				E83A3BBC2BC3E4F300248AF5 /* Products */,
@@ -356,6 +354,8 @@
 		E8FF5AF92BC7FFD10049A49F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E8A78DC62BE3E9FA0075A5DC /* NotificationServiceExtensionDebug.entitlements */,
+				E84346B52BD09564008F1FE3 /* ShareExtension.entitlements */,
 				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
 				E8A78DB62BE3E74B0075A5DC /* LabDebug.entitlements */,
 				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
@@ -643,7 +643,7 @@
 		E80F8F582BC7999900D65531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = ShareExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lab/Assets/ShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
@@ -900,7 +900,7 @@
 		E8A78DC42BE3E9790075A5DC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = NotificationServiceExtensionDebug.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lab/Assets/NotificationServiceExtensionDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G73SPYZ3Q7;
