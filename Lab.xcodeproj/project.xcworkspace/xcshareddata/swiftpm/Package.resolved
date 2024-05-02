@@ -1,5 +1,5 @@
 {
-  "originHash" : "441f7d8c9527a6a5d7344a9ea5d7282b329533de537fd31090d2c1a27e04edee",
+  "originHash" : "341b16f108ad8e57384b03b54252d62a4aab567fdd0c45084fedb019ac4c8c65",
   "pins" : [
     {
       "identity" : "combine-schedulers",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "7aff8d1b31148d32c5933d75557d42f6323ee3d1",
         "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "onesignal-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/OneSignal/OneSignal-XCFramework",
+      "state" : {
+        "revision" : "fc88833146e426eb4f64806baf5e494212458cad",
+        "version" : "5.1.6"
       }
     },
     {
