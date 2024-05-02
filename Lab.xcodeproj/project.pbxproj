@@ -108,6 +108,7 @@
 		E87D17212BCB6F07004F28E4 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E87D17252BCB7A94004F28E4 /* LabAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabAPIClient.swift; sourceTree = "<group>"; };
 		E87D17282BCB7F3B004F28E4 /* Bookmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmarks.swift; sourceTree = "<group>"; };
+		E8A78DB62BE3E74B0075A5DC /* LabDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LabDebug.entitlements; sourceTree = "<group>"; };
 		E8A873752BDF90BC001B0E7F /* LabStyleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabStyleButton.swift; sourceTree = "<group>"; };
 		E8A873772BDFA836001B0E7F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		E8BA5C7B2BDF45F700F84852 /* BookmarkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkImage.swift; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				E83A3BC42BC3E4F400248AF5 /* Lab.entitlements */,
+				E8A78DB62BE3E74B0075A5DC /* LabDebug.entitlements */,
 				E83A3BC52BC3E4F400248AF5 /* Preview Content */,
 				E803F0ED2BC5916A0018C688 /* Info.plist */,
 				E83A3BC22BC3E4F400248AF5 /* Assets.xcassets */,
@@ -728,7 +730,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Lab/Assets/Lab.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Lab/Assets/LabDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Lab/Assets/Preview Content\"";
