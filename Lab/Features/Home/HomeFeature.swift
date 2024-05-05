@@ -15,6 +15,8 @@ struct HomeFeature {
     enum Action {
         case fetchBookmarks(APIRequestAction<[Bookmark]>)
         case addButtonTapped
+        case gearButtonTapped
+        case loggedOut
         case path(StackActionOf<Path>)
         case destination(PresentationAction<Destination.Action>)
     }
@@ -27,9 +29,11 @@ struct HomeFeature {
     @Reducer
     enum Destination {
         case addBookmark(AddBookmarkFeature)
+        case optionAction
     }
 
     @Dependency(\.labAPIClient) private var labAPIClient
+    @Dependency(\.loginSessionClient) private var loginSessionClient
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -69,6 +73,15 @@ struct HomeFeature {
             case let .fetchBookmarks(error):
                 print(error) // error handling
                 return .none
+
+            case .gearButtonTapped:
+                state.destination = .optionAction
+                return .none
+
+            case .loggedOut:
+                return .run { _ in
+                    try await loginSessionClient.logout()
+                }
             }
         }
         .ifLet(\.$destination, action: \.destination)

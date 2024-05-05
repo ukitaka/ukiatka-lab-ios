@@ -59,6 +59,9 @@ struct HomeView: View {
                     .padding()
                 }
                 .navigationTitle("Bookmarks")
+                .navigationBarItems(trailing: Button("", systemImage: "gearshape.fill", action: {
+                    store.send(.gearButtonTapped)
+                }))
             } destination: { store in
                 switch store.case {
                 case let .bookmarkDetail(store):
@@ -76,5 +79,16 @@ struct HomeView: View {
             }
         }
         .tint(.labTint)
+        .confirmationDialog(item: $store.scope(state: \.destination?.optionAction, action: \.destination.optionAction)) { _ in
+            Text("メニュー")
+        } actions: { _ in
+            Button(role: .destructive) {
+                store.send(.loggedOut)
+            } label: {
+                Text("ログアウト")
+            }
+        } message: { _ in
+            Text("メニュー")
+        }
     }
 }

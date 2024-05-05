@@ -1,5 +1,6 @@
 import Dependencies
 import Foundation
+import OneSignalFramework
 import Supabase
 
 actor LoginSessionClient: Sendable {
@@ -13,7 +14,8 @@ actor LoginSessionClient: Sendable {
     }
 
     func login(email: String, password: String) async throws {
-        try await supabseClient.auth.signIn(email: email, password: password)
+        let session = try await supabseClient.auth.signIn(email: email, password: password)
+        OneSignal.login(session.user.id.uuidString)
     }
 
     func logout() async throws {
