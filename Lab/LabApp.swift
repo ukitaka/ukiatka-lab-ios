@@ -24,7 +24,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("User accepted notifications: \(accepted)")
         }, fallbackToSettings: true)
         // Login your customer with externalId
-        // OneSignal.login("EXTERNAL_ID")
 
         return true
     }
