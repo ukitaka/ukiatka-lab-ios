@@ -90,5 +90,8 @@ struct HomeView: View {
         } message: { _ in
             Text("メニュー")
         }
+        .onOpenURL(perform: { url in
+            print(url)
+        })
     }
 }
