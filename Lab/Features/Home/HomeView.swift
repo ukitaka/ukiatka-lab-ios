@@ -51,7 +51,7 @@ struct HomeView: View {
                             .fontWeight(.heavy)
                             .frame(width: 60.0, height: 60.0)
                             .padding()
-                            .background(Color.primary)
+                            .background(Color.labPrimary)
                             .foregroundColor(Color.white)
                             .clipShape(Circle())
                             .shadow(radius: 12.0)
