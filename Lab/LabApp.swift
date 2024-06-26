@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import FirebaseCore
 import OneSignalFramework
 import Supabase
 import SwiftUI
@@ -24,6 +25,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             print("User accepted notifications: \(accepted)")
         }, fallbackToSettings: true)
         // Login your customer with externalId
+
+        FirebaseApp.configure()
 
         return true
     }
