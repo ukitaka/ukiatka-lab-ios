@@ -77,6 +77,7 @@ disabled_rules:
   - unneeded_synthesized_initializer # conflict with swift-mod
   - implicitly_unwrapped_optional
   - force_unwrapping
+  - non_optional_string_data_conversion
 
 analyzer_rules:
   - unused_declaration
